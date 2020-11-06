@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_category">
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="ibrahim.example.beesinernatinal.ui.CategoryFragment"
+        android:label="@string/menu_category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/nav_exchange"
+        android:name="ibrahim.example.beesinernatinal.ui.ExchangeFragment"
+        android:label="@string/menu_exchange"
+        tools:layout="@layout/fragment_exchange" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="ibrahim.example.beesinernatinal.ui.AboutFragment"
+        android:label="@string/menu_about_us"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="ibrahim.example.beesinernatinal.ui.ContactFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/fragment_contact" />
+</navigation>
