@@ -115,9 +115,9 @@ public class CategoryFragment extends Fragment {
         products.add(new ProductType("Air Tools", "Drill", "Good", 0));
         products.add(new ProductType("Air Tools", "Drill", "Good", 0));
         products.add(new ProductType("Air Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Tool Storage", "Drill", "Good", 0));
-        products.add(new ProductType("Tool Storage", "Drill", "Good", 0));
-        products.add(new ProductType("Tool Storage", "Drill", "Good", 0));
+        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
+        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
+        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
 
         // Create Category list from products list
         ArrayList<CategoryType> categories = new ArrayList<>();
