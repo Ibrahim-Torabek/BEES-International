@@ -11,11 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Random;
 
 import ibrahim.example.beesinernatinal.CategoryType;
 import ibrahim.example.beesinernatinal.ProductType;
@@ -33,7 +34,8 @@ public class CategoryFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    ArrayList<ProductType> products = new ArrayList<>();
+    //ArrayList<ProductType> products = new ArrayList<>();
+    ArrayList<CategoryType> categories = new ArrayList<>();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -58,6 +60,7 @@ public class CategoryFragment extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -68,6 +71,8 @@ public class CategoryFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -78,49 +83,14 @@ public class CategoryFragment extends Fragment {
 
         // Create Products List
         // Data is just for test.
-        products.add(new ProductType("Hand Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Hand Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Hand Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Hand Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Hand Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Outdoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Outdoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Outdoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Outdoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Outdoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Indoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Indoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Indoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Indoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Indoor Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Power Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Power Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Power Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Power Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Power Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Garden Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Garden Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Garden Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Garden Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Garden Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Garden Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Garden Tools", "Drill", "Good", 0));
-        products.add(new ProductType("WoodWorking Tools", "Drill", "Good", 0));
-        products.add(new ProductType("WoodWorking Tools", "Drill", "Good", 0));
-        products.add(new ProductType("WoodWorking Tools", "Drill", "Good", 0));
-        products.add(new ProductType("WoodWorking Tools", "Drill", "Good", 0));
-        products.add(new ProductType("WoodWorking Tools", "Drill", "Good", 0));
-        products.add(new ProductType("WoodWorking Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
-        products.add(new ProductType("Air Tools", "Drill", "Good", 0));
 
+//        if(categories.size() == 0){
+//            initProducts();
+//        }
+
+        initProducts();
         // Create Category list from products list
-        ArrayList<CategoryType> categories = new ArrayList<>();
+        //ArrayList<CategoryType> categories = new ArrayList<>();
 
 //        // Take all products' category from products list into categories ArrayList
 //        for (ProductType product :
@@ -140,22 +110,22 @@ public class CategoryFragment extends Fragment {
 //        }
 
         // Create categories based on products
-        for (ProductType product :products) {
-            boolean flag=false;
-            int indx=0;
-
-            for(;indx<categories.size();indx++) {
-                if(categories.get(indx).getName().equals(product.getCategory())) {
-                    flag=true;
-                    break;  // If category exist in arraylist, break
-                }
-            }
-            if (flag) {  // If category exist in ArrayList, increase the item count
-                categories.get(indx).setItems(categories.get(indx).getItems()+1);
-            }else {  // If not exit, add the category name to the ArrayList
-                categories.add(new CategoryType(product.getCategory(),1));
-            }
-        }
+//        for (ProductType product :products) {
+//            boolean flag=false;
+//            int indx=0;
+//
+//            for(;indx<categories.size();indx++) {
+//                if(categories.get(indx).getName().equals(product.getCategory())) {
+//                    flag=true;
+//                    break;  // If category exist in arraylist, break
+//                }
+//            }
+//            if (flag) {  // If category exist in ArrayList, increase the item count
+//                categories.get(indx).setItems(categories.get(indx).getItems()+1);
+//            }else {  // If not exit, add the category name to the ArrayList
+//                categories.add(new CategoryType(product.getCategory(),1));
+//            }
+//        }
 
 //        System.out.println(categories.size());
 //        System.out.println(categories.get(0).getItems());
@@ -179,11 +149,14 @@ public class CategoryFragment extends Fragment {
 
             if(convertView == null){
                 convertView = LayoutInflater.from(getContext())
-                        .inflate(R.layout.category_list, parent,false);
+                        .inflate(R.layout.list_category, parent,false);
+
+                ImageView iconImage = convertView.findViewById(R.id.iconImageView);
+                iconImage.setImageResource(getItem(position).getIconResource());
 
                 TextView categoryList = convertView.findViewById(R.id.categoryListTextView);
                 categoryList.setText(getItem(position).getName());
-                //System.out.println(getItem(position).getName());
+                System.out.println(getItem(position).getName());
 
                 TextView categoryCount = convertView.findViewById(R.id.categoryCountTextView);
                 categoryCount.setText(String.valueOf(getItem(position).getItems()));
@@ -191,5 +164,34 @@ public class CategoryFragment extends Fragment {
 
             return convertView;
         }
+    }
+
+    private void initProducts(){
+        categories.add(new CategoryType("Hand Tools", R.drawable.ic_handtools));
+        categories.add(new CategoryType("Outdoor Tools", R.drawable.ic_outdoortools));
+        categories.add(new CategoryType("Indoor Tools", R.drawable.ic_indoortools));
+        categories.add(new CategoryType("Power Tools", R.drawable.ic_powertools));
+        categories.add(new CategoryType("Garden Tools", R.drawable.ic_gardentools));
+        categories.add(new CategoryType("WoodWorking Tools", R.drawable.ic_woodworking));
+        categories.add(new CategoryType("Air Tools", R.drawable.ic_outdoortools));
+
+
+
+        for (CategoryType category :
+                categories) {
+            Random r = new Random();
+            for (int i = 0; i < r.nextInt(10) + 3; i++) {
+                ProductType productType = new ProductType("Drill", "Good",10);
+                //category.setProduct(productType);
+                if(category != null && productType != null) {
+                    category.setProduct(productType);
+                }
+                //category.setProduct(new ProductType("Drill", "Good", 0));
+            }
+            //category.setIconResource(R.drawable.ic_gardentools);
+            //category.setProduct(new ProductType("Drill", "Good",10));
+        }
+
+
     }
 }
