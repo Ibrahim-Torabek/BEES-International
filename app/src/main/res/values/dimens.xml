@@ -8,4 +8,5 @@
     <dimen name="category_title_size">30sp</dimen>
     <dimen name="listview_size">24dp</dimen>
     <dimen name="category_padding_size">20dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
 </resources>

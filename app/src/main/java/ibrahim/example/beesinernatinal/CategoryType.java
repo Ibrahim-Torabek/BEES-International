@@ -1,18 +1,25 @@
 package ibrahim.example.beesinernatinal;
 
+import java.util.ArrayList;
+
 public class CategoryType {
     private String name;
     private int items;
+    private int iconResource;// = R.drawable.ic_handtools;
+    private ArrayList<ProductType> products = new ArrayList<>();;
 
-    public CategoryType(String name, int items) {
+
+    public CategoryType(String name, int iconResource) {
         this.name = name;
-        this.items = items;
+        this.iconResource = iconResource;
+        //products = new ArrayList<>();
     }
 
     public CategoryType(String name) {
         this.name = name;
+        items = 0;
+        //products = new ArrayList<>();
     }
-
     public String getName() {
         return name;
     }
@@ -27,6 +34,23 @@ public class CategoryType {
 
     public void setItems(int items) {
         this.items = items;
+    }
+
+    public ArrayList<ProductType> getProducts() {
+        return products;
+    }
+
+    public void setProduct(ProductType product) {
+        this.products.add(product);
+        items++;
+    }
+
+    public int getIconResource() {
+        return iconResource;
+    }
+
+    public void setIconResource(int iconResource) {
+        this.iconResource = iconResource;
     }
 
     @Override
