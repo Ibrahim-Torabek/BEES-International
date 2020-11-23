@@ -1,6 +1,7 @@
 package ibrahim.example.beesinernatinal.ui;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -167,13 +168,23 @@ public class CategoryFragment extends Fragment {
     }
 
     private void initProducts(){
-        categories.add(new CategoryType("Hand Tools", R.drawable.ic_handtools));
-        categories.add(new CategoryType("Outdoor Tools", R.drawable.ic_outdoortools));
-        categories.add(new CategoryType("Indoor Tools", R.drawable.ic_indoortools));
-        categories.add(new CategoryType("Power Tools", R.drawable.ic_powertools));
-        categories.add(new CategoryType("Garden Tools", R.drawable.ic_gardentools));
-        categories.add(new CategoryType("WoodWorking Tools", R.drawable.ic_woodworking));
-        categories.add(new CategoryType("Air Tools", R.drawable.ic_outdoortools));
+        //String[] categoryName = new String[getResources().getStringArray(R.array.categories).length];
+        String[] categoryNames = getResources().getStringArray(R.array.categories);
+        TypedArray categoryIcons = getResources().obtainTypedArray(R.array.icons);
+
+        if(categoryNames.length == categoryIcons.length()) {
+            for(int i =0 ; i < categoryNames.length; i++){
+                categories.add(new CategoryType(categoryNames[i], categoryIcons.getResourceId(i,-1)));
+            }
+        }
+
+//        categories.add(new CategoryType("Hand Tools", R.drawable.ic_handtools));
+//        categories.add(new CategoryType("Outdoor Tools", R.drawable.ic_outdoortools));
+//        categories.add(new CategoryType("Indoor Tools", R.drawable.ic_indoortools));
+//        categories.add(new CategoryType("Power Tools", R.drawable.ic_powertools));
+//        categories.add(new CategoryType("Garden Tools", R.drawable.ic_gardentools));
+//        categories.add(new CategoryType("WoodWorking Tools", R.drawable.ic_woodworking));
+//        categories.add(new CategoryType("Air Tools", R.drawable.ic_outdoortools));
 
 
 

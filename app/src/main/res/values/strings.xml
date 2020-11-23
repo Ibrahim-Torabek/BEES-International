@@ -15,4 +15,23 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="category_title">Category</string>
     <string name="category_count">Items</string>
+
+    <string-array name="categories">
+        <item>Hand Tools</item>
+        <item>Outdoor Tools</item>
+        <item>Indoor Tools</item>
+        <item>Power Tools</item>
+        <item>Garden Tools</item>
+        <item>WoodWorking Tools</item>
+        <item>Air Tools</item>
+    </string-array>
+    <integer-array name="icons">
+        <item>@drawable/ic_handtools</item>
+        <item>@drawable/ic_outdoortools</item>
+        <item>@drawable/ic_indoortools</item>
+        <item>@drawable/ic_powertools</item>
+        <item>@drawable/ic_gardentools</item>
+        <item>@drawable/ic_woodworking</item>
+        <item>@drawable/ic_airtools</item>
+    </integer-array>
 </resources>
