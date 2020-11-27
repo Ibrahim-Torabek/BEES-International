@@ -92,7 +92,13 @@ public class ProductFragment extends Fragment {
         @Override
         public Fragment getItem(int position) {
             //itemCount = products.size()
-            return FactFragment.newInstance(products.get(position % products.size()).getName(),products.get(position % products.size()).getImageSource());
+            int viewPosition = position % products.size();
+            return FactFragment.newInstance(
+                    products.get(viewPosition).getName(),
+                    products.get(viewPosition).getImageSource(),
+                    products.get(viewPosition).getDescription(),
+                    products.get(viewPosition).getPrice()
+            );
         }
 
         @Override

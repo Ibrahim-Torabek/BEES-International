@@ -36,106 +36,78 @@
     </integer-array>
 
     <integer-array name="categories_item">
-        <item>10</item>
-        <item>5</item>
-        <item>3</item>
-        <item>4</item>
-        <item>3</item>
         <item>1</item>
-        <item>3</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
     </integer-array>
 
     <string-array name="products_name">
+<!--        Hand Outdoor 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Indoor Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Power Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Hand Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Garden Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Woodword Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Air Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
     </string-array>
     <string-array name="products_description">
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
-        <item>This is a very good product</item>
+<!--        Hand Outdoor 1   -->
+        <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Indoor Tools 1   -->
+        <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Power Tools 1   -->
+        <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Hand Tools 1   -->
+        <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Garden Tools 1   -->
+        <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Woodword Tools 1   -->
+        <item>22 Oz. Steel Checkered Face Hammer</item>
+<!--        Air Tools 1   -->
+        <item>22 Oz. Steel Checkered Face Hammer</item>
     </string-array>
     <integer-array name="products_image">
+<!--        Hand Tools 1-->
         <item>@drawable/p1</item>
+<!--        Indoor Tools 1   -->
         <item>@drawable/p1</item>
+<!--        Power Tools 1   -->
         <item>@drawable/p1</item>
+<!--        Hand Tools 1   -->
         <item>@drawable/p1</item>
+<!--        Garden Tools 1   -->
         <item>@drawable/p1</item>
+<!--        Woodword Tools 1   -->
         <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
-        <item>@drawable/p1</item>
+<!--        Air Tools 1   -->
         <item>@drawable/p1</item>
     </integer-array>
+    <array name="products_pricee">
+<!--        Hand Tools 1-->
+        <item>9.99</item>
+<!--        Indoor Tools 1   -->
+        <item>9.99</item>
+<!--        Power Tools 1   -->
+        <item>9.99</item>
+<!--        Hand Tools 1   -->
+        <item>9.99</item>
+<!--        Garden Tools 1   -->
+        <item>9.99</item>
+<!--        Woodword Tools 1   -->
+        <item>9.99</item>
+<!--        Air Tools 1   -->
+        <item>9.99</item>
+    </array>
+
 </resources>

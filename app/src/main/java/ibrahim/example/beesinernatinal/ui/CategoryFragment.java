@@ -191,6 +191,7 @@ public class CategoryFragment extends Fragment {
         String[] productNames = getResources().getStringArray(R.array.products_name);
         String[] productDescription = getResources().getStringArray(R.array.products_description);
         TypedArray productImage = getResources().obtainTypedArray((R.array.products_image));
+        String[] productPrice = getResources().getStringArray(R.array.products_pricee);
         int[] categoriesItem = getResources().getIntArray(R.array.categories_item);
         int productCount = 0;
 
@@ -201,7 +202,8 @@ public class CategoryFragment extends Fragment {
                         new ProductType(
                                 productNames[productCount],
                                 productDescription[productCount],
-                                productImage.getResourceId(productCount,-1))
+                                productImage.getResourceId(productCount,-1),
+                                Double.parseDouble(productPrice[productCount]))
                 );
                 productCount++;
             }

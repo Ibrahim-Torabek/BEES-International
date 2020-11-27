@@ -28,6 +28,8 @@ public class FactFragment extends Fragment {
     private static final String ARGS_PRODUCTS = "products";
     private static final String ARGS_PRODUCT_NAME = "product_name";
     private static final String ARGS_PRODUCT_IMAGE = "product_image";
+    private static final String ARGS_PRODUCT_DESCRIPTION = "product_description";
+    private static final String ARGS_PRODUCT_PRICE = "product_price";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -36,6 +38,8 @@ public class FactFragment extends Fragment {
     private ProductType product;
     private String productName;
     private int productImage;
+    private String productDescription;
+    private double productPrice;
 
     public FactFragment() {
         // Required empty public constructor
@@ -49,14 +53,18 @@ public class FactFragment extends Fragment {
      * @return A new instance of fragment FactFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FactFragment newInstance(String productName, int productImage) {
+    public static FactFragment newInstance(String name, int imageSource, String description, double price) {
         FactFragment fragment = new FactFragment();
         Bundle args = new Bundle();
-        args.putString(ARGS_PRODUCT_NAME,  productName);
-        args.putInt(ARGS_PRODUCT_IMAGE,  productImage);
+        args.putString(ARGS_PRODUCT_NAME,  name);
+        args.putInt(ARGS_PRODUCT_IMAGE,  imageSource);
+        args.putString(ARGS_PRODUCT_DESCRIPTION,  description);
+        args.putDouble(ARGS_PRODUCT_PRICE,  price);
+
         fragment.setArguments(args);
         return fragment;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +73,8 @@ public class FactFragment extends Fragment {
             //product = (ProductType) getArguments().getSerializable(ARGS_PRODUCTS);
             productName = getArguments().getString(ARGS_PRODUCT_NAME);
             productImage = getArguments().getInt(ARGS_PRODUCT_IMAGE);
+            productDescription = getArguments().getString(ARGS_PRODUCT_DESCRIPTION);
+            productPrice = getArguments().getDouble(ARGS_PRODUCT_PRICE);
         }
     }
 
