@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,7 @@ public class FactFragment extends Fragment {
     private String productDescription;
     private double productPrice;
 
+
     public FactFragment() {
         // Required empty public constructor
     }
@@ -75,6 +77,7 @@ public class FactFragment extends Fragment {
             productImage = getArguments().getInt(ARGS_PRODUCT_IMAGE);
             productDescription = getArguments().getString(ARGS_PRODUCT_DESCRIPTION);
             productPrice = getArguments().getDouble(ARGS_PRODUCT_PRICE);
+
         }
     }
 
@@ -89,6 +92,12 @@ public class FactFragment extends Fragment {
 
         ImageView productImageView = view.findViewById(R.id.productImageView);
         productImageView.setImageResource(productImage);
+
+        TextView productDescriptionTextView = view.findViewById(R.id.productDescriptionTextView);
+        productDescriptionTextView.setText(productDescription);
+
+        TextView productPriceTextView = view.findViewById(R.id.productPriceTextView);
+        productPriceTextView.setText("$" + String.valueOf(productPrice));
 
         return view;
     }

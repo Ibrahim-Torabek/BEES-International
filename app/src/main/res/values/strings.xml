@@ -93,7 +93,7 @@
 <!--        Air Tools 1   -->
         <item>@drawable/p1</item>
     </integer-array>
-    <array name="products_pricee">
+    <string-array name="products_pricee">
 <!--        Hand Tools 1-->
         <item>9.99</item>
 <!--        Indoor Tools 1   -->
@@ -108,6 +108,6 @@
         <item>9.99</item>
 <!--        Air Tools 1   -->
         <item>9.99</item>
-    </array>
+    </string-array>
 
 </resources>
