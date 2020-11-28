@@ -28,7 +28,7 @@
     <integer-array name="categories_icon">
         <item>@drawable/ic_handtools</item>
         <item>@drawable/ic_outdoortools</item>
-        <item>@drawable/ic_indoortools</item>
+        <item>@drawable/ic_baseline_format_paint_24</item>
         <item>@drawable/ic_powertools</item>
         <item>@drawable/ic_gardentools</item>
         <item>@drawable/ic_woodworking</item>
@@ -39,7 +39,7 @@
         <item>5</item>
         <item>3</item>
         <item>3</item>
-        <item>1</item>
+        <item>2</item>
         <item>1</item>
         <item>1</item>
         <item>1</item>
@@ -61,14 +61,14 @@
         <item>Angle Brush</item>
         <item>Roller Cover</item>
 <!--        Power Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-
+        <item>Hammer Drill</item>
+        <item>Compact Drill</item>
 <!--        Garden Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>Bypass Prune</item>
 <!--        Woodword Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>Circular Saw</item>
 <!--        Air Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>Spray Gun</item>
     </string-array>
     <string-array name="products_description">
 <!--        Hand Outdoor 1   -->
@@ -145,19 +145,43 @@
             - Excellent durability and easy to clean for re-use
         </item>
 <!--        Power Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>
+            The hammer drill provides a 360° locking auxiliary handle to allow for control and
+            comfort in difficult drilling operations. The handle has a built-in depth gauge for
+            drilling accuracy. The 1191VSRK has a variable-speed reversing trigger, which helps
+            with accurate bit starting, as well as removing fasteners or bound bits.
+        </item>
+        <item>
+            - Three-mode LED provides lighting in dark work environments up to 20X brighter than previous model\n
+            - LED spotlight mode features 20-minute shutoff function allowing for extended work time in dark or confined spaces\n
+            - Ergonomic comfort grip handle provides ideal balance and tool control\n
+            - DEWALT brushless motor delivers up to 57% more run time over brushed\n
+        </item>
 <!--        Garden Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>
+            - Softgrip<sup>®</sup> handles for comfort and control\n
+            - Non-stick blade coating reduces friction to make cutting easier
+        </item>
 <!--        Woodword Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>
+            - Best in class cordless runtime delivers up to 339 cuts per charge in 2-inch x 4-inch SPF lumber\n
+            - Depth of cut - best in class at 2-9/16-inch\n
+            - Electronic brake - stops the blade after the trigger is released
+        </item>
 <!--        Air Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>
+            - Paint Nozzle: 1.7mm
+            - Capacity-Volume: 32 Fl. Oz
+            - Working air pressure: 50-70 PSI
+            - 1/4inch NPT Air Inlet
+            - Avg CFM: 6 CFM
+        </item>
     </string-array>
     <integer-array name="products_image">
 <!--        Hand Tools 1-->
         <item>@drawable/pd_hammer</item>
         <item>@drawable/pd_wrench</item>
-        <item>@drawable/pd_adjuat_wrench</item>
+        <item>@drawable/pd_adjust_wrench</item>
         <item>@drawable/pd_screw</item>
         <item>@drawable/pd_plier</item>
 <!--        Outdoor Tools 1   -->
@@ -169,14 +193,14 @@
         <item>@drawable/pd_angle_brush</item>
         <item>@drawable/pd_roller_cover</item>
 <!--        Power Tools 1   -->
-        <item>@drawable/p1</item>
-
+        <item>@drawable/pd_hammer_drill</item>
+        <item>@drawable/pd_drill</item>
 <!--        Garden Tools 1   -->
-        <item>@drawable/p1</item>
+        <item>@drawable/pd_pruner</item>
 <!--        Woodword Tools 1   -->
-        <item>@drawable/p1</item>
+        <item>@drawable/pd_saw</item>
 <!--        Air Tools 1   -->
-        <item>@drawable/p1</item>
+        <item>@drawable/pd_spray</item>
     </integer-array>
     <string-array name="products_pricee">
 <!--        Hand Tools 1-->
@@ -193,14 +217,15 @@
         <item>0.99</item>
         <item>6.47</item>
         <item>10.18</item>
-<!--        Hand Tools 1   -->
-        <item>9.99</item>
+<!--        Power Tools 1   -->
+        <item>67.99</item>
+        <item>189</item>
 <!--        Garden Tools 1   -->
-        <item>9.99</item>
+        <item>15.99</item>
 <!--        Woodword Tools 1   -->
-        <item>9.99</item>
+        <item>229</item>
 <!--        Air Tools 1   -->
-        <item>9.99</item>
+        <item>42.99</item>
     </string-array>
 
 </resources>
