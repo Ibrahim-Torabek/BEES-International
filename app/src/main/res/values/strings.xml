@@ -16,22 +16,216 @@
     <string name="category_title">Category</string>
     <string name="category_count">Items</string>
 
-    <string-array name="categories">
+    <string-array name="categories_name">
         <item>Hand Tools</item>
         <item>Outdoor Tools</item>
-        <item>Indoor Tools</item>
+        <item>Painting Tools</item>
         <item>Power Tools</item>
         <item>Garden Tools</item>
         <item>WoodWorking Tools</item>
         <item>Air Tools</item>
     </string-array>
-    <integer-array name="icons">
+    <integer-array name="categories_icon">
         <item>@drawable/ic_handtools</item>
         <item>@drawable/ic_outdoortools</item>
-        <item>@drawable/ic_indoortools</item>
+        <item>@drawable/ic_baseline_format_paint_24</item>
         <item>@drawable/ic_powertools</item>
         <item>@drawable/ic_gardentools</item>
         <item>@drawable/ic_woodworking</item>
         <item>@drawable/ic_airtools</item>
     </integer-array>
+
+    <integer-array name="categories_item">
+        <item>5</item>
+        <item>3</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </integer-array>
+
+    <string-array name="products_name">
+<!--        Hand Outdoor 1   -->
+        <item>Face Hammer</item>
+        <item>Ratcheting Wrench Set</item>
+        <item>Adjustable Wrench Set</item>
+        <item>Screwdriver</item>
+        <item>Compound Pliers</item>
+<!--        Outdoor Tools 1   -->
+        <item>Hole Digger</item>
+        <item>D-Grip Shovel</item>
+        <item>Square Shovel</item>
+<!--        Painting Tools 1   -->
+        <item>Trim Guard</item>
+        <item>Angle Brush</item>
+        <item>Roller Cover</item>
+<!--        Power Tools 1   -->
+        <item>Hammer Drill</item>
+        <item>Compact Drill</item>
+<!--        Garden Tools 1   -->
+        <item>Bypass Prune</item>
+<!--        Woodword Tools 1   -->
+        <item>Circular Saw</item>
+<!--        Air Tools 1   -->
+        <item>Spray Gun</item>
+    </string-array>
+    <string-array name="products_description">
+<!--        Hand Outdoor 1   -->
+        <item>
+            - Optimal weight distribution for a controlled swing\n
+            - Oval shaped strike face makes toe-nailing easy\n
+            - Side nail puller for efficient nail pulling\n
+            - Magnetic nail starter for easy 1-handed nail placement\n
+            - Rip claw\n
+            - 22 oz.\n
+            - Framing hammer
+        </item>
+        <item>
+            - Box end needs just 3.6-degree swing to turn a fastener\n
+            - Open end also ratchets to quickly remove fasteners where box ends cannot reach\n
+            - Alloy steel construction provides durability and long-lasting performance
+        </item>
+        <item>
+            - Double-speed open/close adjustment allows you to work more efficiently\n
+            - Laser etched scale for quick and easy size adjustment\n
+            - Shark fin design, heavy duty, carbon steel\n
+            - Chrome-plated, half polish, no grip
+        </item>
+        <item>
+            - Internal bit storage holds up to 12 bits\n
+            - Heavy-duty ratchet mechanism for high torque applications\n
+            - Removable bar can also be used in power drills\n
+            - Handle will also take regular bit for use in confined space
+        </item>
+        <item>
+            - Supplies significantly more cutting and gripping power over standard pliers\n
+            - Outfitted with bi-material handles for strong grip and comfort\n
+            - Fashioned with an aggressive crosshatch tooth design for enhanced gripping\n
+            - Constructed with chrome vanadium steel for strength and durability
+        </item>
+
+<!--        Outdoor Tools 1   -->
+        <item>
+            - 4.75, x 9 steel blade\n
+            - 54 long with wooden handle\n
+            - Digs 5.5 holes\n
+            - Hardwood Handle\n
+            - lightweight and easy to use\n
+        </item>
+        <item>
+            - Heavy duty tempered steel blade\n
+            - Extra-wide foot steps for more power and security\n
+            - Sturdy comfortable handle with D-grip made of engineered materials\n
+            - Industrial grade tool for landscaping and construction professionals
+        </item>
+        <item>
+            - Heavy duty tempered steel blade\n
+            - Extra-wide foot steps for more power and security\n
+            - Sturdy comfortable handle with D-grip made of engineered materials\n
+            - Industrial grade tool for landscaping and construction professionals
+        </item>
+<!--        Painting Tools 1   -->
+        <item>
+            - Keeps paint off of carpet wall, ceilings, trim and windows\n
+            - 2 inch wide guard\n
+            - Secure, riveted handle
+        </item>
+        <item>
+            - Handcrafted\n
+            - Easy clean up\n
+            - Interior and Exterior\n
+            - For all paints and stains\n
+            - Reusable
+        </item>
+        <item>
+            - Heavy duty moisture and solvent resistant core\n
+            - Recommend for use with flat, eggshell and satin paints\n
+            - Shed-free, knit fabric\n
+            - Excellent durability and easy to clean for re-use
+        </item>
+<!--        Power Tools 1   -->
+        <item>
+            The hammer drill provides a 360° locking auxiliary handle to allow for control and
+            comfort in difficult drilling operations. The handle has a built-in depth gauge for
+            drilling accuracy. The 1191VSRK has a variable-speed reversing trigger, which helps
+            with accurate bit starting, as well as removing fasteners or bound bits.
+        </item>
+        <item>
+            - Three-mode LED provides lighting in dark work environments up to 20X brighter than previous model\n
+            - LED spotlight mode features 20-minute shutoff function allowing for extended work time in dark or confined spaces\n
+            - Ergonomic comfort grip handle provides ideal balance and tool control\n
+            - DEWALT brushless motor delivers up to 57% more run time over brushed\n
+        </item>
+<!--        Garden Tools 1   -->
+        <item>
+            - Softgrip<sup>®</sup> handles for comfort and control\n
+            - Non-stick blade coating reduces friction to make cutting easier
+        </item>
+<!--        Woodword Tools 1   -->
+        <item>
+            - Best in class cordless runtime delivers up to 339 cuts per charge in 2-inch x 4-inch SPF lumber\n
+            - Depth of cut - best in class at 2-9/16-inch\n
+            - Electronic brake - stops the blade after the trigger is released
+        </item>
+<!--        Air Tools 1   -->
+        <item>
+            - Paint Nozzle: 1.7mm
+            - Capacity-Volume: 32 Fl. Oz
+            - Working air pressure: 50-70 PSI
+            - 1/4inch NPT Air Inlet
+            - Avg CFM: 6 CFM
+        </item>
+    </string-array>
+    <integer-array name="products_image">
+<!--        Hand Tools 1-->
+        <item>@drawable/pd_hammer</item>
+        <item>@drawable/pd_wrench</item>
+        <item>@drawable/pd_adjust_wrench</item>
+        <item>@drawable/pd_screw</item>
+        <item>@drawable/pd_plier</item>
+<!--        Outdoor Tools 1   -->
+        <item>@drawable/pd_digger</item>
+        <item>@drawable/pd_dshovle</item>
+        <item>@drawable/pd_sshovel</item>
+<!--        Painting Tools 1   -->
+        <item>@drawable/pd_trim</item>
+        <item>@drawable/pd_angle_brush</item>
+        <item>@drawable/pd_roller_cover</item>
+<!--        Power Tools 1   -->
+        <item>@drawable/pd_hammer_drill</item>
+        <item>@drawable/pd_drill</item>
+<!--        Garden Tools 1   -->
+        <item>@drawable/pd_pruner</item>
+<!--        Woodword Tools 1   -->
+        <item>@drawable/pd_saw</item>
+<!--        Air Tools 1   -->
+        <item>@drawable/pd_spray</item>
+    </integer-array>
+    <string-array name="products_pricee">
+<!--        Hand Tools 1-->
+        <item>29.99</item>
+        <item>34.97</item>
+        <item>8.97</item>
+        <item>19.99</item>
+        <item>38.99</item>
+<!--        Indoor Tools 1   -->
+        <item>45.99</item>
+        <item>18.99</item>
+        <item>18.99</item>
+<!--        painting Tools 1   -->
+        <item>0.99</item>
+        <item>6.47</item>
+        <item>10.18</item>
+<!--        Power Tools 1   -->
+        <item>67.99</item>
+        <item>189</item>
+<!--        Garden Tools 1   -->
+        <item>15.99</item>
+<!--        Woodword Tools 1   -->
+        <item>229</item>
+<!--        Air Tools 1   -->
+        <item>42.99</item>
+    </string-array>
+
 </resources>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -73,7 +74,7 @@ public class CategoryFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
+        initProducts();
     }
 
     @Override
@@ -89,7 +90,7 @@ public class CategoryFragment extends Fragment {
 //            initProducts();
 //        }
 
-        initProducts();
+
         // Create Category list from products list
         //ArrayList<CategoryType> categories = new ArrayList<>();
 
@@ -136,6 +137,15 @@ public class CategoryFragment extends Fragment {
         ListView categoryList = view.findViewById(R.id.categoryListView);
         categoryList.setAdapter(adapter);
 
+        categoryList.setOnItemClickListener((parent, view1, position, id) -> {
+            ArrayList<ProductType> products = categories.get(position).getProducts();
+
+            Bundle args = new Bundle();
+            args.putSerializable("PRODUCTS",products);
+
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_nav_category_to_productFragment,args);
+        });
         return view;
     }
 
@@ -169,8 +179,8 @@ public class CategoryFragment extends Fragment {
 
     private void initProducts(){
         //String[] categoryName = new String[getResources().getStringArray(R.array.categories).length];
-        String[] categoryNames = getResources().getStringArray(R.array.categories);
-        TypedArray categoryIcons = getResources().obtainTypedArray(R.array.icons);
+        String[] categoryNames = getResources().getStringArray(R.array.categories_name);
+        TypedArray categoryIcons = getResources().obtainTypedArray(R.array.categories_icon);
 
         if(categoryNames.length == categoryIcons.length()) {
             for(int i =0 ; i < categoryNames.length; i++){
@@ -178,30 +188,40 @@ public class CategoryFragment extends Fragment {
             }
         }
 
-//        categories.add(new CategoryType("Hand Tools", R.drawable.ic_handtools));
-//        categories.add(new CategoryType("Outdoor Tools", R.drawable.ic_outdoortools));
-//        categories.add(new CategoryType("Indoor Tools", R.drawable.ic_indoortools));
-//        categories.add(new CategoryType("Power Tools", R.drawable.ic_powertools));
-//        categories.add(new CategoryType("Garden Tools", R.drawable.ic_gardentools));
-//        categories.add(new CategoryType("WoodWorking Tools", R.drawable.ic_woodworking));
-//        categories.add(new CategoryType("Air Tools", R.drawable.ic_outdoortools));
+        String[] productNames = getResources().getStringArray(R.array.products_name);
+        String[] productDescription = getResources().getStringArray(R.array.products_description);
+        TypedArray productImage = getResources().obtainTypedArray((R.array.products_image));
+        String[] productPrice = getResources().getStringArray(R.array.products_pricee);
+        int[] categoriesItem = getResources().getIntArray(R.array.categories_item);
+        int productCount = 0;
 
 
-
-        for (CategoryType category :
-                categories) {
-            Random r = new Random();
-            for (int i = 0; i < r.nextInt(10) + 3; i++) {
-                ProductType productType = new ProductType("Drill", "Good",10);
-                //category.setProduct(productType);
-                if(category != null && productType != null) {
-                    category.setProduct(productType);
-                }
-                //category.setProduct(new ProductType("Drill", "Good", 0));
+        for(int i =0; i < categories.size(); i++){
+            for(int j = 0; j < categoriesItem[i]; j++){
+                categories.get(i).setProduct(
+                        new ProductType(
+                                productNames[productCount],
+                                productDescription[productCount],
+                                productImage.getResourceId(productCount,-1),
+                                Double.parseDouble(productPrice[productCount]))
+                );
+                productCount++;
             }
-            //category.setIconResource(R.drawable.ic_gardentools);
-            //category.setProduct(new ProductType("Drill", "Good",10));
         }
+//        for (CategoryType category :
+//                categories) {
+//            Random r = new Random();
+//            for (int i = 0; i < r.nextInt(10) + 3; i++) {
+//                ProductType productType = new ProductType("Drill", "Good",10);
+//                //category.setProduct(productType);
+//                if(category != null && productType != null) {
+//                    category.setProduct(productType);
+//                }
+//                //category.setProduct(new ProductType("Drill", "Good", 0));
+//            }
+//            //category.setIconResource(R.drawable.ic_gardentools);
+//            //category.setProduct(new ProductType("Drill", "Good",10));
+//        }
 
 
     }

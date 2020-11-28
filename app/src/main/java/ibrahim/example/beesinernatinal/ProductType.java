@@ -5,14 +5,22 @@ public class ProductType {
     private String name;
     private String description;
     private int imageSource;
+    private double price;
 
-    public ProductType(String name, String description, int imageSource) {
+    public ProductType(String name, String description, int imageSource,double price) {
         this.name = name;
         this.description = description;
         this.imageSource = imageSource;
+        this.price = price;
     }
 
+    public double getPrice() {
+        return price;
+    }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public String getName() {
         return name;
