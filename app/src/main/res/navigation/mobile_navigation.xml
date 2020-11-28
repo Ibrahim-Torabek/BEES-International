@@ -31,6 +31,6 @@
     <fragment
         android:id="@+id/productFragment"
         android:name="ibrahim.example.beesinernatinal.ui.ProductFragment"
-        android:label="fragment_product"
+        android:label="@string/menu_product"
         tools:layout="@layout/fragment_product" />
 </navigation>
