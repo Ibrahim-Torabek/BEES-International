@@ -19,7 +19,7 @@
     <string-array name="categories_name">
         <item>Hand Tools</item>
         <item>Outdoor Tools</item>
-        <item>Indoor Tools</item>
+        <item>Painting Tools</item>
         <item>Power Tools</item>
         <item>Garden Tools</item>
         <item>WoodWorking Tools</item>
@@ -36,9 +36,9 @@
     </integer-array>
 
     <integer-array name="categories_item">
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
+        <item>5</item>
+        <item>3</item>
+        <item>3</item>
         <item>1</item>
         <item>1</item>
         <item>1</item>
@@ -47,13 +47,22 @@
 
     <string-array name="products_name">
 <!--        Hand Outdoor 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-<!--        Indoor Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>Face Hammer</item>
+        <item>Ratcheting Wrench Set</item>
+        <item>Adjustable Wrench Set</item>
+        <item>Screwdriver</item>
+        <item>Compound Pliers</item>
+<!--        Outdoor Tools 1   -->
+        <item>Hole Digger</item>
+        <item>D-Grip Shovel</item>
+        <item>Square Shovel</item>
+<!--        Painting Tools 1   -->
+        <item>Trim Guard</item>
+        <item>Angle Brush</item>
+        <item>Roller Cover</item>
 <!--        Power Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
-<!--        Hand Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+
 <!--        Garden Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
 <!--        Woodword Tools 1   -->
@@ -63,12 +72,79 @@
     </string-array>
     <string-array name="products_description">
 <!--        Hand Outdoor 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-<!--        Indoor Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
+        <item>
+            - Optimal weight distribution for a controlled swing\n
+            - Oval shaped strike face makes toe-nailing easy\n
+            - Side nail puller for efficient nail pulling\n
+            - Magnetic nail starter for easy 1-handed nail placement\n
+            - Rip claw\n
+            - 22 oz.\n
+            - Framing hammer
+        </item>
+        <item>
+            - Box end needs just 3.6-degree swing to turn a fastener\n
+            - Open end also ratchets to quickly remove fasteners where box ends cannot reach\n
+            - Alloy steel construction provides durability and long-lasting performance
+        </item>
+        <item>
+            - Double-speed open/close adjustment allows you to work more efficiently\n
+            - Laser etched scale for quick and easy size adjustment\n
+            - Shark fin design, heavy duty, carbon steel\n
+            - Chrome-plated, half polish, no grip
+        </item>
+        <item>
+            - Internal bit storage holds up to 12 bits\n
+            - Heavy-duty ratchet mechanism for high torque applications\n
+            - Removable bar can also be used in power drills\n
+            - Handle will also take regular bit for use in confined space
+        </item>
+        <item>
+            - Supplies significantly more cutting and gripping power over standard pliers\n
+            - Outfitted with bi-material handles for strong grip and comfort\n
+            - Fashioned with an aggressive crosshatch tooth design for enhanced gripping\n
+            - Constructed with chrome vanadium steel for strength and durability
+        </item>
+
+<!--        Outdoor Tools 1   -->
+        <item>
+            - 4.75, x 9 steel blade\n
+            - 54 long with wooden handle\n
+            - Digs 5.5 holes\n
+            - Hardwood Handle\n
+            - lightweight and easy to use\n
+        </item>
+        <item>
+            - Heavy duty tempered steel blade\n
+            - Extra-wide foot steps for more power and security\n
+            - Sturdy comfortable handle with D-grip made of engineered materials\n
+            - Industrial grade tool for landscaping and construction professionals
+        </item>
+        <item>
+            - Heavy duty tempered steel blade\n
+            - Extra-wide foot steps for more power and security\n
+            - Sturdy comfortable handle with D-grip made of engineered materials\n
+            - Industrial grade tool for landscaping and construction professionals
+        </item>
+<!--        Painting Tools 1   -->
+        <item>
+            - Keeps paint off of carpet wall, ceilings, trim and windows\n
+            - 2 inch wide guard\n
+            - Secure, riveted handle
+        </item>
+        <item>
+            - Handcrafted\n
+            - Easy clean up\n
+            - Interior and Exterior\n
+            - For all paints and stains\n
+            - Reusable
+        </item>
+        <item>
+            - Heavy duty moisture and solvent resistant core\n
+            - Recommend for use with flat, eggshell and satin paints\n
+            - Shed-free, knit fabric\n
+            - Excellent durability and easy to clean for re-use
+        </item>
 <!--        Power Tools 1   -->
-        <item>22 Oz. Steel Checkered Face Hammer</item>
-<!--        Hand Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
 <!--        Garden Tools 1   -->
         <item>22 Oz. Steel Checkered Face Hammer</item>
@@ -79,13 +155,22 @@
     </string-array>
     <integer-array name="products_image">
 <!--        Hand Tools 1-->
-        <item>@drawable/p1</item>
-<!--        Indoor Tools 1   -->
-        <item>@drawable/p1</item>
+        <item>@drawable/pd_hammer</item>
+        <item>@drawable/pd_wrench</item>
+        <item>@drawable/pd_adjuat_wrench</item>
+        <item>@drawable/pd_screw</item>
+        <item>@drawable/pd_plier</item>
+<!--        Outdoor Tools 1   -->
+        <item>@drawable/pd_digger</item>
+        <item>@drawable/pd_dshovle</item>
+        <item>@drawable/pd_sshovel</item>
+<!--        Painting Tools 1   -->
+        <item>@drawable/pd_trim</item>
+        <item>@drawable/pd_angle_brush</item>
+        <item>@drawable/pd_roller_cover</item>
 <!--        Power Tools 1   -->
         <item>@drawable/p1</item>
-<!--        Hand Tools 1   -->
-        <item>@drawable/p1</item>
+
 <!--        Garden Tools 1   -->
         <item>@drawable/p1</item>
 <!--        Woodword Tools 1   -->
@@ -95,11 +180,19 @@
     </integer-array>
     <string-array name="products_pricee">
 <!--        Hand Tools 1-->
-        <item>9.99</item>
+        <item>29.99</item>
+        <item>34.97</item>
+        <item>8.97</item>
+        <item>19.99</item>
+        <item>38.99</item>
 <!--        Indoor Tools 1   -->
-        <item>9.99</item>
-<!--        Power Tools 1   -->
-        <item>9.99</item>
+        <item>45.99</item>
+        <item>18.99</item>
+        <item>18.99</item>
+<!--        painting Tools 1   -->
+        <item>0.99</item>
+        <item>6.47</item>
+        <item>10.18</item>
 <!--        Hand Tools 1   -->
         <item>9.99</item>
 <!--        Garden Tools 1   -->

@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 import ibrahim.example.beesinernatinal.FactFragment;
@@ -66,6 +68,8 @@ public class ProductFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -78,6 +82,12 @@ public class ProductFragment extends Fragment {
         MyViewPagerAdapter adapter = new MyViewPagerAdapter(getChildFragmentManager());
         ViewPager viewPager = view.findViewById(R.id.productContent);
         viewPager.setAdapter(adapter);
+
+//        FloatingActionButton fab = view.findViewById(R.id.fab);
+//        fab.setVisibility(FloatingActionButton.VISIBLE);
+
+
+
 
         return view;
     }
