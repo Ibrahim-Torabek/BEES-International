@@ -8,4 +8,7 @@ This is an application for an international trade company. In this application, 
 
 
 ## Picture of Product ViewPager
-![Categories](products.jpg)
+![Products](products.jpg)
+
+## Picture of Exchange RecyclerViewPager
+![Exchange](exchange.jpg)

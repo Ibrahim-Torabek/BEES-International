@@ -56,6 +56,7 @@ public class ContactFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        MainActivity.fab.show();
     }
 
     @Override
@@ -64,7 +65,7 @@ public class ContactFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
 
-        MainActivity.fab.show();
+
 
         return view;
     }

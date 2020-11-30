@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import ibrahim.example.beesinernatinal.Currency;
 import ibrahim.example.beesinernatinal.ExchangeRecyclerViewAdapter;
+import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
 
 /**
@@ -69,6 +70,7 @@ public class ExchangeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_exchange, container, false);
+        MainActivity.fab.hide();
 
         RecyclerView exchangeRecycleView = view.findViewById(R.id.exchangeRecycleView);
 

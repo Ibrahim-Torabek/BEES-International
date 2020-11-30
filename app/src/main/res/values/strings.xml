@@ -240,7 +240,6 @@
         <item>SGD</item>
         <item>MYR</item>
         <item>GBP</item>
-        <item>FIM</item>
     </string-array>
     <string-array name="currency_country">
         <item>The USA</item>
@@ -253,7 +252,6 @@
         <item>Singapore</item>
         <item>Malaysia</item>
         <item>British</item>
-        <item>Finnish</item>
     </string-array>
     <string-array name="currency_rate">
         <item>1</item>

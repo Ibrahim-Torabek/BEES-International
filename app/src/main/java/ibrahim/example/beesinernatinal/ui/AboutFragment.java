@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
 
 /**
@@ -55,6 +56,7 @@ public class AboutFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        MainActivity.fab.show();
     }
 
     @Override

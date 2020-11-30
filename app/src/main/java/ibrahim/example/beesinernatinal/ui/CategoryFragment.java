@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import ibrahim.example.beesinernatinal.CategoryType;
+import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.ProductType;
 import ibrahim.example.beesinernatinal.R;
 
@@ -82,6 +83,7 @@ public class CategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_category, container, false);
+        MainActivity.fab.hide();
 
         // Create Products List
         // Data is just for test.
