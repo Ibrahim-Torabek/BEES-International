@@ -13,4 +13,5 @@
     <dimen name="product_image_zise">250dp</dimen>
     <dimen name="product_price_size">32dp</dimen>
     <dimen name="product_description_size">20sp</dimen>
+    <dimen name="list_size">30sp</dimen>
 </resources>

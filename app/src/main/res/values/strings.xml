@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_category">Product Category</string>
+    <string name="menu_product">Product Information</string>
     <string name="menu_exchange">Exchange Rates</string>
     <string name="menu_about_us">About Us</string>
     <string name="menu_contact">Contact</string>
@@ -226,6 +227,55 @@
         <item>229</item>
 <!--        Air Tools 1   -->
         <item>42.99</item>
+    </string-array>
+
+    <string-array name="currency_name">
+        <item>USD</item>
+        <item>CAD</item>
+        <item>EUR</item>
+        <item>INR</item>
+        <item>AUD</item>
+        <item>DKK</item>
+        <item>TRY</item>
+        <item>SGD</item>
+        <item>MYR</item>
+        <item>GBP</item>
+    </string-array>
+    <string-array name="currency_country">
+        <item>The USA</item>
+        <item>Canada</item>
+        <item>Europe</item>
+        <item>India</item>
+        <item>Australia</item>
+        <item>Danish</item>
+        <item>Turkey</item>
+        <item>Singapore</item>
+        <item>Malaysia</item>
+        <item>British</item>
+    </string-array>
+    <string-array name="currency_rate">
+        <item>1</item>
+        <item>1.30870</item>
+        <item>0.841482</item>
+        <item>74.1327</item>
+        <item>1.36811</item>
+        <item>6.28373</item>
+        <item>7.60603</item>
+        <item>1.34359</item>
+        <item>4.09213</item>
+        <item>0.7529850</item>
+    </string-array>
+    <string-array name="currency_sign">
+        <item>$</item>
+        <item>$</item>
+        <item>€</item>
+        <item>₹</item>
+        <item>$</item>
+        <item>Kr.</item>
+        <item>₺</item>
+        <item>$</item>
+        <item>RM</item>
+        <item>£</item>
     </string-array>
 
 </resources>

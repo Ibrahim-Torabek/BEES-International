@@ -3,11 +3,19 @@ package ibrahim.example.beesinernatinal.ui;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import ibrahim.example.beesinernatinal.Currency;
+import ibrahim.example.beesinernatinal.ExchangeRecyclerViewAdapter;
+import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
 
 /**
@@ -61,6 +69,45 @@ public class ExchangeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_exchange, container, false);
+        View view = inflater.inflate(R.layout.fragment_exchange, container, false);
+        MainActivity.fab.hide();
+
+        RecyclerView exchangeRecycleView = view.findViewById(R.id.exchangeRecycleView);
+
+        // Layout Manager
+        //LinearLayout exchangeList = new LinearLayout(getContext());
+        exchangeRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        //Set adapter
+        TextView usdText = view.findViewById(R.id.usdText);
+        double usd;
+
+        usd = Double.parseDouble((String) usdText.getText());
+        ArrayList<Currency> exchangeRates = initExchange();
+
+        exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(exchangeRates, usd));
+
+        return view;
+    }
+
+    private ArrayList<Currency> initExchange(){
+        String[] currency_name = getResources().getStringArray(R.array.currency_name);
+        String[] currency_country = getResources().getStringArray(R.array.currency_country);
+        String[] currency_rate = getResources().getStringArray(R.array.currency_rate);
+        String[] currency_sign = getResources().getStringArray(R.array.currency_sign);
+
+        ArrayList<Currency> currencies = new ArrayList<>();
+
+        for (int i = 1; i < currency_country.length; i++){
+            currencies.add(new Currency(
+                    currency_name[i],
+                    currency_country[i],
+                    currency_sign[i],
+                    Double.parseDouble(currency_rate[i])
+                    )
+            );
+        }
+
+        return currencies;
     }
 }
