@@ -240,6 +240,7 @@
         <item>SGD</item>
         <item>MYR</item>
         <item>GBP</item>
+        <item>CHF</item>
     </string-array>
     <string-array name="currency_country">
         <item>The USA</item>
@@ -252,6 +253,7 @@
         <item>Singapore</item>
         <item>Malaysia</item>
         <item>British</item>
+        <item>Swiss</item>
     </string-array>
     <string-array name="currency_rate">
         <item>1</item>
@@ -264,6 +266,7 @@
         <item>1.34359</item>
         <item>4.09213</item>
         <item>0.7529850</item>
+        <item>0.904628</item>
     </string-array>
     <string-array name="currency_sign">
         <item>$</item>
@@ -271,11 +274,12 @@
         <item>€</item>
         <item>₹</item>
         <item>$</item>
-        <item>Kr.</item>
+        <item>Kr</item>
         <item>₺</item>
         <item>$</item>
         <item>RM</item>
         <item>£</item>
+        <item>Fr</item>
     </string-array>
 
 </resources>

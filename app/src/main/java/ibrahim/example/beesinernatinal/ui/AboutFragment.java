@@ -3,11 +3,15 @@ package ibrahim.example.beesinernatinal.ui;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import ibrahim.example.beesinernatinal.ExchangeRecyclerViewAdapter;
 import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
 
@@ -63,6 +67,20 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false);
+        View view = inflater.inflate(R.layout.fragment_about, container, false);
+
+        // Countries list area:
+        RecyclerView countryRecycleView = view.findViewById(R.id.countryRecycleView);
+        countryRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+        countryRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, -1));
+
+        TextView countriesTitle = view.findViewById(R.id.countriesTitleTextView);
+        countriesTitle.setOnClickListener(e -> {
+            countryRecycleView.setVisibility(RecyclerView.VISIBLE);
+        });
+
+
+
+        return view;
     }
 }

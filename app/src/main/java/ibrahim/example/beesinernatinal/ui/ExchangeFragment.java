@@ -83,31 +83,10 @@ public class ExchangeFragment extends Fragment {
         double usd;
 
         usd = Double.parseDouble((String) usdText.getText());
-        ArrayList<Currency> exchangeRates = initExchange();
 
-        exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(exchangeRates, usd));
+        exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, usd));
 
         return view;
     }
 
-    private ArrayList<Currency> initExchange(){
-        String[] currency_name = getResources().getStringArray(R.array.currency_name);
-        String[] currency_country = getResources().getStringArray(R.array.currency_country);
-        String[] currency_rate = getResources().getStringArray(R.array.currency_rate);
-        String[] currency_sign = getResources().getStringArray(R.array.currency_sign);
-
-        ArrayList<Currency> currencies = new ArrayList<>();
-
-        for (int i = 1; i < currency_country.length; i++){
-            currencies.add(new Currency(
-                    currency_name[i],
-                    currency_country[i],
-                    currency_sign[i],
-                    Double.parseDouble(currency_rate[i])
-                    )
-            );
-        }
-
-        return currencies;
-    }
 }

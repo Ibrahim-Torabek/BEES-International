@@ -27,6 +27,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
