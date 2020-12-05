@@ -41,9 +41,7 @@
                 app:contentInsetStartWithNavigation="0dp"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-                app:title="@string/company_name"
-                app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:titleTextColor="#F1E9E9" />
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
