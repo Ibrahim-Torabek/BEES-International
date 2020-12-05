@@ -16,10 +16,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public static FloatingActionButton fab;
+
+    // What to use in Exchange, Product and AboutUs fragments
+    public static ArrayList<Currency> exchangeRates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        exchangeRates = initExchange();
     }
 
     @Override
@@ -64,5 +71,26 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    private ArrayList<Currency> initExchange(){
+        String[] currency_name = getResources().getStringArray(R.array.currency_name);
+        String[] currency_country = getResources().getStringArray(R.array.currency_country);
+        String[] currency_rate = getResources().getStringArray(R.array.currency_rate);
+        String[] currency_sign = getResources().getStringArray(R.array.currency_sign);
+
+        ArrayList<Currency> currencies = new ArrayList<>();
+
+        for (int i = 1; i < currency_country.length; i++){
+            currencies.add(new Currency(
+                            currency_name[i],
+                            currency_country[i],
+                            currency_sign[i],
+                            Double.parseDouble(currency_rate[i])
+                    )
+            );
+        }
+
+        return currencies;
     }
 }

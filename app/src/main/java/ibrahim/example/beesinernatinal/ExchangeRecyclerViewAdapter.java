@@ -39,12 +39,17 @@ public class ExchangeRecyclerViewAdapter extends RecyclerView.Adapter<ExchangeRe
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         Currency exchangeRate = exchangeRates.get(position);
-        holder.countryName.setText(exchangeRate.getCountry());
-        holder.currencyName.setText(exchangeRate.getName());
-        double rate = Math.round(usd * exchangeRate.getRate() );
 
-        //rate /= 100;
-        holder.exchangeRate.setText(exchangeRate.getSign() + String.valueOf(rate));
+        holder.countryName.setText(exchangeRate.getCountry());
+
+        // Just list countries name if usd = -1
+        if (usd != -1) {
+            holder.currencyName.setText(exchangeRate.getName());
+            double rate = Math.round(usd * exchangeRate.getRate() );
+            holder.exchangeRate.setText(exchangeRate.getSign() + String.valueOf(rate));
+        }
+
+
     }
 
     @Override

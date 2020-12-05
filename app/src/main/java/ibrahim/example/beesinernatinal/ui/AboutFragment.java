@@ -1,13 +1,19 @@
 package ibrahim.example.beesinernatinal.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import ibrahim.example.beesinernatinal.ExchangeRecyclerViewAdapter;
 import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
 
@@ -56,13 +62,30 @@ public class AboutFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        MainActivity.fab.show();
+        //MainActivity.fab.show();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false);
+        View view = inflater.inflate(R.layout.fragment_about, container, false);
+
+        // Countries list area:
+        RecyclerView countryRecycleView = view.findViewById(R.id.countryRecycleView);
+        countryRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+        countryRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, -1));
+
+
+//        TextView contryNameTextView = view.findViewById(R.id.countryNameTextView);
+//        contryNameTextView.setTextSize(20);
+//        TextView countriesTitle = view.findViewById(R.id.countriesTitleTextView);
+//        countriesTitle.setOnClickListener(e -> {
+            countryRecycleView.setVisibility(RecyclerView.VISIBLE);
+//        });
+
+
+
+        return view;
     }
 }
