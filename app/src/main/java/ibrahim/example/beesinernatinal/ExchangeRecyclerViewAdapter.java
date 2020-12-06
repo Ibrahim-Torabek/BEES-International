@@ -3,6 +3,7 @@ package ibrahim.example.beesinernatinal;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,6 +48,7 @@ public class ExchangeRecyclerViewAdapter extends RecyclerView.Adapter<ExchangeRe
             holder.currencyName.setText(exchangeRate.getName());
             double rate = Math.round(usd * exchangeRate.getRate() );
             holder.exchangeRate.setText(exchangeRate.getSign() + String.valueOf(rate));
+            holder.countryFlag.setImageResource(exchangeRate.getFlag());
         }
 
 
@@ -64,6 +66,7 @@ public class ExchangeRecyclerViewAdapter extends RecyclerView.Adapter<ExchangeRe
         protected TextView countryName;
         protected TextView currencyName;
         protected TextView exchangeRate;
+        protected ImageView countryFlag;
         //protected double usd; // = Double.parseDouble((String) usdText.getText());
 
         public CustomViewHolder(@NonNull View itemView) {
@@ -73,6 +76,7 @@ public class ExchangeRecyclerViewAdapter extends RecyclerView.Adapter<ExchangeRe
             countryName = itemView.findViewById(R.id.countryNameTextView);
             currencyName = itemView.findViewById(R.id.currencyNameTextView);
             exchangeRate = itemView.findViewById(R.id.exchangeRateTextView);
+            countryFlag = itemView.findViewById(R.id.countryFalgImageView);
         }
     }
 }
