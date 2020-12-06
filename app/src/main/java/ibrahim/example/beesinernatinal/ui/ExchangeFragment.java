@@ -1,14 +1,18 @@
 package ibrahim.example.beesinernatinal.ui;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,6 +21,8 @@ import ibrahim.example.beesinernatinal.Currency;
 import ibrahim.example.beesinernatinal.ExchangeRecyclerViewAdapter;
 import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
+
+import static androidx.core.content.ContextCompat.getSystemService;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,12 +85,45 @@ public class ExchangeFragment extends Fragment {
         exchangeRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         //Set adapter
-        TextView usdText = view.findViewById(R.id.usdText);
+        TextView usdText = view.findViewById(R.id.usdEditText);
         double usd;
 
-        usd = Double.parseDouble((String) usdText.getText());
-
+        usd = Double.parseDouble((String) usdText.getText().toString());
         exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, usd));
+
+        // Change the exchage rate of currncies when usd Text changed
+        usdText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String usdString = usdText.getText().toString();
+                if(!usdString.isEmpty()) {
+                    Double myusd = Double.parseDouble(usdString);
+                    exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, myusd));
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        usdText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(v.getId() == R.id.usdEditText && !hasFocus) {
+
+                    InputMethodManager imm =  (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                }
+            }
+        });
 
         return view;
     }
