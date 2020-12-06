@@ -46,7 +46,7 @@ public class ExchangeRecyclerViewAdapter extends RecyclerView.Adapter<ExchangeRe
         // Just list countries name if usd = -1
         if (usd != -1) {
             holder.currencyName.setText(exchangeRate.getName());
-            double rate = Math.round(usd * exchangeRate.getRate() );
+            double rate = Math.round(usd * exchangeRate.getRate() *100 ) / 100;
             holder.exchangeRate.setText(exchangeRate.getSign() + String.valueOf(rate));
             holder.countryFlag.setImageResource(exchangeRate.getFlag());
         }

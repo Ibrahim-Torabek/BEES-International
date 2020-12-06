@@ -313,5 +313,6 @@
     <string name="about_member_text">Global Trade &amp; Commerce Association, Inc.</string>
     <string name="about_employee_title">Number of employees:</string>
     <string name="about_employee_text">1</string>
+    <string name="flag">flag</string>
 
 </resources>

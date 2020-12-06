@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:weightSum="10">
@@ -17,13 +17,13 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_flag_uk" />
+            android:contentDescription="@string/flag" />
 
         <TextView
             android:id="@+id/currencyNameTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_weight="3"
             android:textAlignment="textStart"
             android:textSize="@dimen/list_size" />
 
@@ -31,7 +31,7 @@
             android:id="@+id/exchangeRateTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_weight="6"
             android:textAlignment="textEnd"
             android:textSize="@dimen/list_size" />
     </LinearLayout>
@@ -39,8 +39,9 @@
     <TextView
         android:id="@+id/countryNameTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="4"
-        android:textSize="20sp" />
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:textSize="@dimen/product_description_size" />
 
 </LinearLayout>
