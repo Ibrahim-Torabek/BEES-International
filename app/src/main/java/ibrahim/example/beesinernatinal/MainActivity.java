@@ -1,5 +1,6 @@
 package ibrahim.example.beesinernatinal;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         String[] currency_country = getResources().getStringArray(R.array.currency_country);
         String[] currency_rate = getResources().getStringArray(R.array.currency_rate);
         String[] currency_sign = getResources().getStringArray(R.array.currency_sign);
+        TypedArray currency_flag = getResources().obtainTypedArray((R.array.currency_flag));
 
         ArrayList<Currency> currencies = new ArrayList<>();
 
@@ -86,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
                             currency_name[i],
                             currency_country[i],
                             currency_sign[i],
-                            Double.parseDouble(currency_rate[i])
+                            Double.parseDouble(currency_rate[i]),
+                            currency_flag.getResourceId(i,-1)
                     )
             );
         }

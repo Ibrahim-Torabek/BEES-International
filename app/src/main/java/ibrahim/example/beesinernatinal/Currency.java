@@ -5,6 +5,7 @@ public class Currency {
     private String country;
     private String sign;
     private double rate;
+    private int flag;
 
     public Currency(String name, String country, double rate) {
         this.name = name;
@@ -17,6 +18,14 @@ public class Currency {
         this.country = country;
         this.sign = sign;
         this.rate = rate;
+    }
+
+    public Currency(String name, String country, String sign, double rate, int flag) {
+        this.name = name;
+        this.country = country;
+        this.sign = sign;
+        this.rate = rate;
+        this.flag = flag;
     }
 
     public String getName() {
@@ -45,6 +54,14 @@ public class Currency {
 
     public String getSign() {
         return sign;
+    }
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
     }
 
     @Override
