@@ -12,3 +12,6 @@ This is an application for an international trade company. In this application, 
 
 ## Picture of Exchange RecyclerViewPager
 ![Exchange](exchange.jpg)
+
+## Picture of About Us Fragment
+![AboutUs](aboutus.jpg)

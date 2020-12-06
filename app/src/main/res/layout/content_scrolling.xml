@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ui.AboutFragment"
+    tools:showIn="@layout/fragment_about">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/aboutTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/about_title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/product_title_size" />
+
+        <TextView
+            android:id="@+id/aboutBodyTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/category_padding_size"
+            android:paddingEnd="@dimen/category_padding_size"
+            android:text="@string/about_text"
+            android:textSize="@dimen/product_description_size" />
+
+        <TextView
+            android:id="@+id/aboutCountriesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/about_countries_title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/product_title_size" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countryRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/category_padding_size"
+            android:paddingEnd="@dimen/category_padding_size"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_exchange" />
+
+        <TextView
+            android:id="@+id/aboutLocationTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/about_location_title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/product_title_size" />
+
+        <TextView
+            android:id="@+id/aboutLocationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/category_padding_size"
+            android:paddingEnd="@dimen/category_padding_size"
+            android:text="@string/about_location_text"
+            android:textSize="@dimen/product_description_size" />
+
+        <TextView
+            android:id="@+id/aboutCreationTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/about_creation_title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/product_title_size" />
+
+        <TextView
+            android:id="@+id/aboutCreationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/category_padding_size"
+            android:paddingEnd="@dimen/category_padding_size"
+            android:text="@string/about_creation_text"
+            android:textSize="@dimen/product_description_size" />
+
+        <TextView
+            android:id="@+id/aboutMemberTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/about_member_title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/product_title_size" />
+
+        <TextView
+            android:id="@+id/aboutMemberText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/category_padding_size"
+            android:paddingEnd="@dimen/category_padding_size"
+            android:text="@string/about_member_text"
+            android:textSize="@dimen/product_description_size" />
+
+        <TextView
+            android:id="@+id/aboutEmployeeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/about_employee_title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/product_title_size" />
+
+        <TextView
+            android:id="@+id/aboutEmployeeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/category_padding_size"
+            android:paddingEnd="@dimen/category_padding_size"
+            android:text="@string/about_employee_text"
+            android:textSize="@dimen/product_description_size" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

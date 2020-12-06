@@ -6,6 +6,7 @@
     <string name="nav_header_subtitle">admin@beesinternational.ca</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="company_name">BEES International</string>
 
     <string name="menu_category">Product Category</string>
     <string name="menu_product">Product Information</string>
@@ -240,6 +241,7 @@
         <item>SGD</item>
         <item>MYR</item>
         <item>GBP</item>
+        <item>CHF</item>
     </string-array>
     <string-array name="currency_country">
         <item>The USA</item>
@@ -247,12 +249,16 @@
         <item>Europe</item>
         <item>India</item>
         <item>Australia</item>
-        <item>Danish</item>
+        <item>Denmark</item>
         <item>Turkey</item>
         <item>Singapore</item>
         <item>Malaysia</item>
         <item>British</item>
+        <item>Switzerland</item>
     </string-array>
+    <integer-array name="currency_flag">
+        <item>1</item>
+    </integer-array>
     <string-array name="currency_rate">
         <item>1</item>
         <item>1.30870</item>
@@ -264,6 +270,7 @@
         <item>1.34359</item>
         <item>4.09213</item>
         <item>0.7529850</item>
+        <item>0.904628</item>
     </string-array>
     <string-array name="currency_sign">
         <item>$</item>
@@ -271,11 +278,30 @@
         <item>€</item>
         <item>₹</item>
         <item>$</item>
-        <item>Kr.</item>
+        <item>Kr</item>
         <item>₺</item>
         <item>$</item>
         <item>RM</item>
         <item>£</item>
+        <item>Fr</item>
     </string-array>
+
+    <string name="about_title">About:</string>
+    <string name="about_text">
+        We are involved in the tools business.\n
+        We will directly provide high-quality tools to
+        general distributors in various countries that we contracted.\n
+
+        Simple, honest, ethical business.    </string>
+    <string name="about_contries">Contracted Countries:</string>
+    <string name="about_countries_title">Contracted Countries:</string>
+    <string name="about_location_title">Primary location:</string>
+    <string name="about_location_text">Ontario, Canada</string>
+    <string name="about_creation_title">Date of creation:</string>
+    <string name="about_creation_text">November, 2020</string>
+    <string name="about_member_title">A member of:</string>
+    <string name="about_member_text">Global Trade &amp; Commerce Association, Inc.</string>
+    <string name="about_employee_title">Number of employees:</string>
+    <string name="about_employee_text">1</string>
 
 </resources>
