@@ -253,11 +253,21 @@
         <item>Turkey</item>
         <item>Singapore</item>
         <item>Malaysia</item>
-        <item>British</item>
+        <item>the United Kingdom</item>
         <item>Switzerland</item>
     </string-array>
     <integer-array name="currency_flag">
-        <item>1</item>
+        <item>@drawable/ic_flag_us</item>
+        <item>@drawable/ic_flag_ca</item>
+        <item>@drawable/ic_flag_eu</item>
+        <item>@drawable/ic_flag_india</item>
+        <item>@drawable/ic_flag_australia</item>
+        <item>@drawable/ic_flag_denmark</item>
+        <item>@drawable/ic_flag_turkey</item>
+        <item>@drawable/ic_flag_singapore</item>
+        <item>@drawable/ic_flag_malaysia</item>
+        <item>@drawable/ic_flag_uk</item>
+        <item>@drawable/ic_flag_switzerland</item>
     </integer-array>
     <string-array name="currency_rate">
         <item>1</item>
