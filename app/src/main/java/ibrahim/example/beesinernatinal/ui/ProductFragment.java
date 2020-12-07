@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.ToxicBakery.viewpager.transforms.RotateDownTransformer;
 import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -83,7 +84,7 @@ public class ProductFragment extends Fragment {
         MyViewPagerAdapter adapter = new MyViewPagerAdapter(getChildFragmentManager());
         ViewPager viewPager = view.findViewById(R.id.productContent);
         viewPager.setAdapter(adapter);
-        viewPager.setPageTransformer(true, new RotateUpTransformer());
+        viewPager.setPageTransformer(true, new RotateDownTransformer());
 
 //        FloatingActionButton fab = view.findViewById(R.id.fab);
 //        fab.setVisibility(FloatingActionButton.VISIBLE);
