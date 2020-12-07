@@ -22,11 +22,11 @@
     <string name="text_accounting_number">+1 519-999-1113</string>
 
     <string name="text_sms_title">SMS:</string>
-    <string name="text_sms_number">+1-519-999-2222</string>
+    <string name="text_sms_number">+1 519-999-2222</string>
     <string name="text_fax_title">Fax:</string>
     <string name="text_fax_number">519-999-3333</string>
     <string name="text_email_title">Email:</string>
-    <string name="text_email_number">admin@mycinema.ca (Click to Send)</string>
+    <string name="text_email_address">admin@beesinternational.ca</string>
     <string name="title_address">Address:</string>
     <string name="contact_address">7654 Tecumseh Rd E, Windsor, ON N8T 1E9 (Click to Open on Map)</string>
     <string name="text_ask_dealer">Ask Dealer</string>
