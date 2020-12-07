@@ -71,23 +71,36 @@ public class ContactFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
 
         TextView callTextView = view.findViewById(R.id.callTextView);
-        callTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                Uri call = Uri.parse("tel:5199991111");
-                i.setData(call);
-                //i.putExtra(Intent.EXTRA_PHONE_NUMBER,"05199991111");
-
-                if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                    startActivity(i);
-                } else {
-                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot make a call", Snackbar.LENGTH_LONG);
-                    snackbar.show();
-                }
-            }
-        });
+        callTextView.setOnClickListener(new PhoneCall(callTextView.getText().toString()));
+        TextView salesTextView = view.findViewById(R.id.salesTextView);
+        salesTextView.setOnClickListener(new PhoneCall(salesTextView.getText().toString()));
+        TextView accountingTextView = view.findViewById(R.id.accountingTextView);
+        accountingTextView.setOnClickListener(new PhoneCall(accountingTextView.getText().toString()));
 
         return view;
+    }
+
+    class PhoneCall implements View.OnClickListener{
+        private String callNumber;
+        //private View view;
+
+        public PhoneCall(String callNumber) {
+            this.callNumber = callNumber;
+            //this.view = view;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            Uri call = Uri.parse("tel:" + callNumber);
+            i.setData(call);
+
+            if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                startActivity(i);
+            } else {
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot make a call", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        }
     }
 }

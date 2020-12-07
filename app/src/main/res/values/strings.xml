@@ -14,10 +14,15 @@
     <string name="menu_about_us">About Us</string>
     <string name="menu_contact">Contact</string>
     <string name="text_welcome">Contact Information</string>
-    <string name="text_call_title">Phone Number:</string>
-    <string name="text_call_number">519-999-1111 (Click to Call)</string>
+    <string name="text_call_title">General Contact:</string>
+    <string name="text_call_number">+1 519-999-1111</string>
+    <string name="text_sales_title">Contact Sales:</string>
+    <string name="text_sales_number">+1 519-999-1112</string>
+    <string name="text_accounting_title">Contact Accounting:</string>
+    <string name="text_accounting_number">+1 519-999-1113</string>
+
     <string name="text_sms_title">SMS:</string>
-    <string name="text_sms_number">519-999-2222 (Click to Send)</string>
+    <string name="text_sms_number">+1-519-999-2222</string>
     <string name="text_fax_title">Fax:</string>
     <string name="text_fax_number">519-999-3333</string>
     <string name="text_email_title">Email:</string>
