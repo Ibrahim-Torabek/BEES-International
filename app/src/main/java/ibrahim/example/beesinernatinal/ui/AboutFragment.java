@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -81,11 +82,13 @@ public class AboutFragment extends Fragment {
 //        contryNameTextView.setTextSize(20);
 //        TextView countriesTitle = view.findViewById(R.id.countriesTitleTextView);
 //        countriesTitle.setOnClickListener(e -> {
-            countryRecycleView.setVisibility(RecyclerView.VISIBLE);
+        countryRecycleView.setVisibility(RecyclerView.VISIBLE);
 //        });
 
 
 
         return view;
     }
+
+
 }

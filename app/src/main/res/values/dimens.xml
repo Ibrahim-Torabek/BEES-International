@@ -14,6 +14,9 @@
     <dimen name="product_price_size">32dp</dimen>
     <dimen name="product_description_size">20sp</dimen>
     <dimen name="list_size">30sp</dimen>
+    <dimen name="margin_text">10dp</dimen>
+    <dimen name="text_welcome">30sp</dimen>
     <dimen name="app_bar_height">300dp</dimen>
-
+    <dimen name="text_tile">24sp</dimen>
+    <dimen name="text_size">20sp</dimen>
 </resources>

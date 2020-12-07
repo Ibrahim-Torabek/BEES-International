@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/nav_about"
         android:name="ibrahim.example.beesinernatinal.ui.AboutFragment"
-        android:label="@string/menu_about_us"
+        android:label="@string/company_name"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/nav_contact"

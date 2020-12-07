@@ -2,6 +2,7 @@ package ibrahim.example.beesinernatinal;
 
 import java.util.ArrayList;
 
+
 public class CategoryType {
     private String name;
     private int items;

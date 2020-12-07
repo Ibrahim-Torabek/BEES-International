@@ -15,3 +15,6 @@ This is an application for an international trade company. In this application, 
 
 ## Picture of About Us Fragment
 ![AboutUs](aboutus.jpg)
+
+## Picture of Contact Us Fragment
+![ContactUs](contactus.jpg)

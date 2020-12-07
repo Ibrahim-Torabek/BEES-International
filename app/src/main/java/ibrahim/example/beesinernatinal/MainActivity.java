@@ -18,9 +18,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
-
+/**
+ * <h1>App for BEES International</h1>
+ * <h2>Android Project of MAD305 Course</h2>
+ * <p>The purpose of this application is to introduce the company.
+ * The content of the introduction is mainly the tool products exported to
+ * some countries. Another function is to quickly convert exchange rates.
+ * Because the main currency is also denominated in US dollars, users in various
+ * countries need to check the current exchange rate in time (for technical reasons,
+ * temporarily use a fixed exchange rate for conversion). Another function is contact
+ * information. Users of this application can quickly contact various departments of the company.</p>
+ * <p>
+ *
+ * @author  Wusiman Yibulayin (Ibrahim)
+ * @version 1.0
+ * @since   2020-11-20
+ */
 public class MainActivity extends AppCompatActivity {
-
     private AppBarConfiguration mAppBarConfiguration;
     public static FloatingActionButton fab;
 
