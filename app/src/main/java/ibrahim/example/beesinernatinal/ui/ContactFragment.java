@@ -136,6 +136,21 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        // Open address on map Intent
+        TextView addressTextView = view.findViewById(R.id.addressTextView);
+        addressTextView.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            Uri location = Uri.parse("geo:0.0?q=42.3189817,-83.0435235(BEES International)");
+            i.setData(location);
+
+            if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                startActivity(i);
+            } else {
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the map", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+
         return view;
     }
 
