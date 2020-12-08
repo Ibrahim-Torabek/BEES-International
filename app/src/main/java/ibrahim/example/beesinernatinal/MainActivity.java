@@ -18,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
+
+import ibrahim.example.beesinernatinal.pojo.Currency;
+
 /**
  * <h1>App for BEES International</h1>
  * <h2>Android Project of MAD305 Course</h2>

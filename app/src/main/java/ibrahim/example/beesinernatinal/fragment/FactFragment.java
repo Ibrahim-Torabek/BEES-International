@@ -1,19 +1,17 @@
-package ibrahim.example.beesinernatinal;
+package ibrahim.example.beesinernatinal.fragment;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import ibrahim.example.beesinernatinal.pojo.ProductType;
+import ibrahim.example.beesinernatinal.R;
 
 /**
  * A simple {@link Fragment} subclass.

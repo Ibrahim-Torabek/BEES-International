@@ -1,4 +1,4 @@
-package ibrahim.example.beesinernatinal.ui;
+package ibrahim.example.beesinernatinal.fragment;
 
 import android.os.Bundle;
 
@@ -11,16 +11,12 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.ToxicBakery.viewpager.transforms.RotateDownTransformer;
-import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-import ibrahim.example.beesinernatinal.FactFragment;
-import ibrahim.example.beesinernatinal.ProductType;
+import ibrahim.example.beesinernatinal.pojo.ProductType;
 import ibrahim.example.beesinernatinal.R;
 
 /**

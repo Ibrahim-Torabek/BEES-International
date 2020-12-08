@@ -1,10 +1,7 @@
-package ibrahim.example.beesinernatinal.ui;
+package ibrahim.example.beesinernatinal.fragment;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,9 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import ibrahim.example.beesinernatinal.ExchangeRecyclerViewAdapter;
+import ibrahim.example.beesinernatinal.adapter.ExchangeRecyclerViewAdapter;
 import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
 

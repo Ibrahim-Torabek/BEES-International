@@ -1,4 +1,4 @@
-package ibrahim.example.beesinernatinal.ui;
+package ibrahim.example.beesinernatinal.fragment;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,11 +18,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-import ibrahim.example.beesinernatinal.CategoryType;
+import ibrahim.example.beesinernatinal.pojo.CategoryType;
 import ibrahim.example.beesinernatinal.MainActivity;
-import ibrahim.example.beesinernatinal.ProductType;
+import ibrahim.example.beesinernatinal.pojo.ProductType;
 import ibrahim.example.beesinernatinal.R;
 
 /**

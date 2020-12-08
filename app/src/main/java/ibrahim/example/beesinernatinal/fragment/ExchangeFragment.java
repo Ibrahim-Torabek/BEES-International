@@ -1,4 +1,4 @@
-package ibrahim.example.beesinernatinal.ui;
+package ibrahim.example.beesinernatinal.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,14 +15,9 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import ibrahim.example.beesinernatinal.Currency;
-import ibrahim.example.beesinernatinal.ExchangeRecyclerViewAdapter;
+import ibrahim.example.beesinernatinal.adapter.ExchangeRecyclerViewAdapter;
 import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
-
-import static androidx.core.content.ContextCompat.getSystemService;
 
 /**
  * A simple {@link Fragment} subclass.

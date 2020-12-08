@@ -1,4 +1,4 @@
-package ibrahim.example.beesinernatinal.ui;
+package ibrahim.example.beesinernatinal.fragment;
 
 /**
  * <h1>App for BeesInernatinal</h1>
