@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="false"
+        android:entries="@array/currency_country"
+        android:entryValues="@array/currency_name"
+        android:icon="@drawable/ic_foreign_currency_exchange"
+        android:key="currency"
+        android:title="@string/currency_list_title" />
+</PreferenceScreen>

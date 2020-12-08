@@ -332,5 +332,6 @@
     <string name="about_employee_text">1</string>
     <string name="flag">flag</string>
     <string name="send_email">Send Email</string>
+    <string name="currency_list_title"> Currency of Country</string>
 
 </resources>

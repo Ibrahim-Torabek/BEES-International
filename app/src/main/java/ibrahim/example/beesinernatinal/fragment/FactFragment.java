@@ -1,15 +1,24 @@
 package ibrahim.example.beesinernatinal.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
+import ibrahim.example.beesinernatinal.MainActivity;
+import ibrahim.example.beesinernatinal.pojo.Currency;
 import ibrahim.example.beesinernatinal.pojo.ProductType;
 import ibrahim.example.beesinernatinal.R;
 
@@ -40,6 +49,7 @@ public class FactFragment extends Fragment {
     private String productDescription;
     private double productPrice;
 
+    private View view;
 
     public FactFragment() {
         // Required empty public constructor
@@ -75,15 +85,23 @@ public class FactFragment extends Fragment {
             productImage = getArguments().getInt(ARGS_PRODUCT_IMAGE);
             productDescription = getArguments().getString(ARGS_PRODUCT_DESCRIPTION);
             productPrice = getArguments().getDouble(ARGS_PRODUCT_PRICE);
-
         }
+
+
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        showPrice();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_fact, container, false);
+        view = inflater.inflate(R.layout.fragment_fact, container, false);
 
         TextView productNameTextView = view.findViewById(R.id.prodcutNameTextView);
         productNameTextView.setText(productName);
@@ -94,9 +112,30 @@ public class FactFragment extends Fragment {
         TextView productDescriptionTextView = view.findViewById(R.id.productDescriptionTextView);
         productDescriptionTextView.setText(productDescription);
 
-        TextView productPriceTextView = view.findViewById(R.id.productPriceTextView);
-        productPriceTextView.setText("$" + String.valueOf(productPrice));
+        //showPrice();
+
 
         return view;
+    }
+
+    private void showPrice(){
+        TextView productPriceTextView = view.findViewById(R.id.productPriceTextView);
+        Currency current = MainActivity.exchangeRates.get(0);
+        double exchageRate = 1;
+        String currency = "$";
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String currencyName = preferences.getString("currency","USD");
+        System.out.println(currencyName);
+        for (Currency c :
+                MainActivity.exchangeRates) {
+            if(c.getName().equals(currencyName)){
+                exchageRate = c.getRate();
+                currency = c.getSign();
+                break;
+            }
+        }
+
+        String price = new DecimalFormat("#.##").format((productPrice * exchageRate));
+        productPriceTextView.setText(currency + price);
     }
 }
