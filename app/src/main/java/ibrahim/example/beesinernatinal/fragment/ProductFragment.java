@@ -1,5 +1,6 @@
 package ibrahim.example.beesinernatinal.fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +38,8 @@ public class ProductFragment extends Fragment {
     private String mParam2;
 
     ArrayList<ProductType> products;
+
+    private View view;
 
     public ProductFragment() {
         // Required empty public constructor
@@ -74,21 +78,25 @@ public class ProductFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_product, container, false);
+        view = inflater.inflate(R.layout.fragment_product, container, false);
+
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         products = (ArrayList<ProductType>) getArguments().getSerializable("PRODUCTS");
 
         MyViewPagerAdapter adapter = new MyViewPagerAdapter(getChildFragmentManager());
         ViewPager viewPager = view.findViewById(R.id.productContent);
         viewPager.setAdapter(adapter);
-        viewPager.setPageTransformer(true, new RotateDownTransformer());
-
-//        FloatingActionButton fab = view.findViewById(R.id.fab);
-//        fab.setVisibility(FloatingActionButton.VISIBLE);
-
-
-
-
-        return view;
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        if(preferences.getBoolean("animation",true))
+            viewPager.setPageTransformer(true, new RotateDownTransformer());
+        else
+            viewPager.setPageTransformer(true, null);
     }
 
     public class MyViewPagerAdapter extends FragmentPagerAdapter{

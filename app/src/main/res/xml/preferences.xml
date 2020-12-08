@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <SwitchPreference
+        android:defaultValue="true"
+        android:icon="@drawable/ic_acceleration"
+        android:key="animation"
+        android:title="@string/settings_animation" />
     <ListPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:entries="@array/currency_country"
         android:entryValues="@array/currency_name"
         android:icon="@drawable/ic_foreign_currency_exchange"
         android:key="currency"
-        android:title="@string/currency_list_title" />
+        android:title="@string/settings_currency" />
 </PreferenceScreen>
