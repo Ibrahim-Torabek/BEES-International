@@ -1,4 +1,4 @@
-package ibrahim.example.beesinernatinal;
+package ibrahim.example.beesinernatinal.pojo;
 
 import java.util.ArrayList;
 

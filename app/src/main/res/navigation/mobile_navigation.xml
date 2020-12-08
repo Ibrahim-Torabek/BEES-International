@@ -6,7 +6,7 @@
     app:startDestination="@id/nav_category">
     <fragment
         android:id="@+id/nav_category"
-        android:name="ibrahim.example.beesinernatinal.ui.CategoryFragment"
+        android:name="ibrahim.example.beesinernatinal.fragment.CategoryFragment"
         android:label="@string/menu_category"
         tools:layout="@layout/fragment_category" >
         <action
@@ -15,22 +15,31 @@
     </fragment>
     <fragment
         android:id="@+id/nav_exchange"
-        android:name="ibrahim.example.beesinernatinal.ui.ExchangeFragment"
+        android:name="ibrahim.example.beesinernatinal.fragment.ExchangeFragment"
         android:label="@string/menu_exchange"
         tools:layout="@layout/fragment_exchange" />
     <fragment
         android:id="@+id/nav_about"
-        android:name="ibrahim.example.beesinernatinal.ui.AboutFragment"
+        android:name="ibrahim.example.beesinernatinal.fragment.AboutFragment"
         android:label="@string/company_name"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/nav_contact"
-        android:name="ibrahim.example.beesinernatinal.ui.ContactFragment"
+        android:name="ibrahim.example.beesinernatinal.fragment.ContactFragment"
         android:label="@string/menu_contact"
-        tools:layout="@layout/fragment_contact" />
+        tools:layout="@layout/fragment_contact" >
+        <action
+            android:id="@+id/action_nav_contact_to_dealerFragment"
+            app:destination="@id/dealerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productFragment"
-        android:name="ibrahim.example.beesinernatinal.ui.ProductFragment"
+        android:name="ibrahim.example.beesinernatinal.fragment.ProductFragment"
         android:label="@string/menu_product"
         tools:layout="@layout/fragment_product" />
+    <fragment
+        android:id="@+id/dealerFragment"
+        android:name="ibrahim.example.beesinernatinal.fragment.DealerFragment"
+        android:label="Ask Dealer"
+        tools:layout="@layout/fragment_dealer" />
 </navigation>

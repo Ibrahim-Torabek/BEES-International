@@ -1,4 +1,4 @@
-package ibrahim.example.beesinernatinal;
+package ibrahim.example.beesinernatinal.pojo;
 
 public class Currency {
     private String name;

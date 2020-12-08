@@ -1,10 +1,11 @@
-package ibrahim.example.beesinernatinal.ui;
+package ibrahim.example.beesinernatinal.fragment;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -151,6 +152,15 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        TextView dealerTextView = view.findViewById(R.id.dealerButton);
+        dealerTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Navigation.findNavController(view).navigate(R.id.action_nav_contact_to_dealerFragment);
+            }
+        });
+
         return view;
     }
 
@@ -194,4 +204,6 @@ public class ContactFragment extends Fragment {
             }
         }
     }
+
+
 }
