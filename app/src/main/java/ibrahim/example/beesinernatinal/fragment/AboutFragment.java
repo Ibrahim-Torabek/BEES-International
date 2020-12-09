@@ -1,6 +1,8 @@
 package ibrahim.example.beesinernatinal.fragment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import ibrahim.example.beesinernatinal.adapter.ExchangeRecyclerViewAdapter;
 import ibrahim.example.beesinernatinal.MainActivity;
@@ -64,7 +69,10 @@ public class AboutFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        //MainActivity.fab.show();
+        MainActivity.fab.hide();
+
+
+
     }
 
     @Override

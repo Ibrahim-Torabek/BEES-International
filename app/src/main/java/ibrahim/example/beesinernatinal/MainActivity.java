@@ -2,6 +2,7 @@ package ibrahim.example.beesinernatinal;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,13 +58,8 @@ public class MainActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
         //fab.setVisibility(FloatingActionButton.INVISIBLE);
         fab.hide();
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(new smsOnClick());
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -132,5 +128,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return currencies;
+    }
+
+    private class smsOnClick implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(Intent.ACTION_SENDTO);
+            Uri sms = Uri.parse("smsto:");
+            i.setData(sms);
+            i.putExtra("address", getResources().getString(R.string.text_sms_number));
+
+            if(i.resolveActivity(getPackageManager()) != null){
+                startActivity(i);
+            } else {
+                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"Cannot send an SMS", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        }
     }
 }

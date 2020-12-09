@@ -187,19 +187,14 @@ public class ContactFragment extends Fragment {
         smsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                Uri sms = Uri.parse("smsto:");
-                i.setData(sms);
-                i.putExtra("address", getResources().getString(R.string.text_sms_number));
-
-
-
-                if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                    startActivity(i);
-                } else {
-                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot send an SMS", Snackbar.LENGTH_LONG);
-                    snackbar.show();
-                }
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.setType("text/plain");
+                //sendIntent.setData(sms);
+                sendIntent.setPackage("com.whatsapp");
+                startActivity(Intent.createChooser(sendIntent, ""));
+                startActivity(sendIntent);
             }
         });
 
