@@ -8,6 +8,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 import android.preference.PreferenceManager;
@@ -107,8 +109,9 @@ public class CategoryFragment extends Fragment {
             Bundle args = new Bundle();
             args.putSerializable("PRODUCTS",products);
 
-            Navigation.findNavController(view)
-                    .navigate(R.id.action_nav_category_to_productFragment,args);
+            NavController navController = Navigation.findNavController(view);
+
+            navController.navigate(R.id.action_nav_category_to_productFragment, args);
         });
     }
 
