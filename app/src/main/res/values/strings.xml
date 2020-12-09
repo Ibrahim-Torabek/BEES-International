@@ -336,6 +336,12 @@
     <string name="settings_animation">Animation</string>
     <string name="setting_text_size">Text Size</string>
     <string name="menu_credits">Credits</string>
+    <string name="credit_icons_title">Icons</string>
+    <string name="credit_flags_title">Flags</string>
+    <string name="credit_images_title">Images</string>
+    <string name="credit_icons_text">All Icons From <u>www.flaticon.com</u></string>
+    <string name="credit_flags_text">Flags made by <i>Freepik</i> from <u>www.flaticon.com</u></string>
+    <string name="credit_images_text">All Product Images from <u>www.pixabay.com</u></string>
     <string-array name="settings_text_size_keys">
         <item>Small</item>
         <item>Medium</item>

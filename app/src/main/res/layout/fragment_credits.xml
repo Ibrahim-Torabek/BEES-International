@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.CreditsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/creditIconsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_icons_title"
+            android:textColor="@color/colorTitle"
+            android:textSize="@dimen/list_size" />
+
+        <TextView
+            android:id="@+id/creditIconsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:text="@string/credit_icons_text"
+            android:textSize="@dimen/text_size" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/credit_devider_margin"
+            android:background="?android:attr/listDivider" />
+        <TextView
+            android:id="@+id/creditFlagsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_flags_title"
+            android:textColor="@color/colorTitle"
+            android:textSize="@dimen/list_size" />
+
+        <TextView
+            android:id="@+id/creditFlagsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:text="@string/credit_flags_text"
+            android:textSize="@dimen/text_size" />
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/credit_devider_margin"
+            android:background="?android:attr/listDivider" />
+        <TextView
+            android:id="@+id/creditImagesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_images_title"
+            android:textColor="@color/colorTitle"
+            android:textSize="@dimen/list_size" />
+
+        <TextView
+            android:id="@+id/creditImagesText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_images_text"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/text_size" />
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/credit_devider_margin"
+            android:background="?android:attr/listDivider" />
+
+    </LinearLayout>
+</ScrollView>

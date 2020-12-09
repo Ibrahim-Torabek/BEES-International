@@ -1,12 +1,19 @@
 package ibrahim.example.beesinernatinal.fragment;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import ibrahim.example.beesinernatinal.R;
 
@@ -25,6 +32,8 @@ public class CreditsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private View view;
 
     public CreditsFragment() {
         // Required empty public constructor
@@ -61,6 +70,60 @@ public class CreditsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_credits, container, false);
+        view = inflater.inflate(R.layout.fragment_credits, container, false);
+
+
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
+
+        TextView creditIconsText = view.findViewById(R.id.creditIconsText);
+        creditIconsText.setTextSize(textSize);
+        creditIconsText.setOnClickListener(e -> {
+            Uri webpage = Uri.parse("https://www.flaticon.com/");
+            Intent i = new Intent(Intent.ACTION_VIEW,webpage);
+
+            if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                startActivity(i);
+            } else {
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+
+        TextView creditFlagsText = view.findViewById(R.id.creditFlagsText);
+        creditFlagsText.setTextSize(textSize);
+        creditFlagsText.setOnClickListener(e -> {
+            Uri webpage = Uri.parse("https://www.flaticon.com/authors/freepik");
+            Intent i = new Intent(Intent.ACTION_VIEW,webpage);
+
+            if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                startActivity(i);
+            } else {
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+
+        TextView creditImagesText = view.findViewById(R.id.creditImagesText);
+        creditImagesText.setTextSize(textSize);
+        creditImagesText.setOnClickListener(e -> {
+            Uri webpage = Uri.parse("https://pixabay.com/");
+            Intent i = new Intent(Intent.ACTION_VIEW,webpage);
+
+            if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                startActivity(i);
+            } else {
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+
     }
 }
