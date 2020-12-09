@@ -1,14 +1,17 @@
 package ibrahim.example.beesinernatinal.fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import ibrahim.example.beesinernatinal.adapter.ExchangeRecyclerViewAdapter;
 import ibrahim.example.beesinernatinal.MainActivity;
@@ -29,6 +32,8 @@ public class AboutFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private View view;
 
     public AboutFragment() {
         // Required empty public constructor
@@ -66,25 +71,40 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_about, container, false);
-
-        // Countries list area:
-        RecyclerView countryRecycleView = view.findViewById(R.id.countryRecycleView);
-        countryRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
-        countryRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, -1));
-
-
-//        TextView contryNameTextView = view.findViewById(R.id.countryNameTextView);
-//        contryNameTextView.setTextSize(20);
-//        TextView countriesTitle = view.findViewById(R.id.countriesTitleTextView);
-//        countriesTitle.setOnClickListener(e -> {
-        countryRecycleView.setVisibility(RecyclerView.VISIBLE);
-//        });
+        view = inflater.inflate(R.layout.fragment_about, container, false);
 
 
 
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
 
+        // Countries list area:
+        RecyclerView countryRecycleView = view.findViewById(R.id.countryRecycleView);
+        countryRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+        countryRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, -1,textSize));
+
+        countryRecycleView.setVisibility(RecyclerView.VISIBLE);
+
+        TextView aboutBodyTextView = view.findViewById(R.id.aboutBodyTextView);
+        aboutBodyTextView.setTextSize(textSize);
+
+        TextView aboutLocationText = view.findViewById(R.id.aboutLocationText);
+        aboutLocationText.setTextSize(textSize);
+
+        TextView aboutCreationText = view.findViewById(R.id.aboutCreationText);
+        aboutCreationText.setTextSize(textSize);
+
+        TextView aboutMemberText = view.findViewById(R.id.aboutMemberText);
+        aboutMemberText.setTextSize(textSize);
+
+        TextView aboutEmployeeText = view.findViewById(R.id.aboutEmployeeText);
+        aboutEmployeeText.setTextSize(textSize);
+
+    }
 }

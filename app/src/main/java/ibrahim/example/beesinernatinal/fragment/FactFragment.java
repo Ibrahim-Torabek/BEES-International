@@ -103,14 +103,7 @@ public class FactFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_fact, container, false);
 
-        TextView productNameTextView = view.findViewById(R.id.prodcutNameTextView);
-        productNameTextView.setText(productName);
 
-        ImageView productImageView = view.findViewById(R.id.productImageView);
-        productImageView.setImageResource(productImage);
-
-        TextView productDescriptionTextView = view.findViewById(R.id.productDescriptionTextView);
-        productDescriptionTextView.setText(productDescription);
 
         //showPrice();
 
@@ -119,13 +112,31 @@ public class FactFragment extends Fragment {
     }
 
     private void showPrice(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
+        String currencyName = preferences.getString("currency","USD");
+
+
+        TextView productNameTextView = view.findViewById(R.id.prodcutNameTextView);
+        productNameTextView.setText(productName);
+        productNameTextView.setTextSize(textSize + 6);
+
+
+        ImageView productImageView = view.findViewById(R.id.productImageView);
+        productImageView.setImageResource(productImage);
+
+        TextView productDescriptionTextView = view.findViewById(R.id.productDescriptionTextView);
+        productDescriptionTextView.setText(productDescription);
+        productDescriptionTextView.setTextSize(textSize);
+
+
         TextView productPriceTextView = view.findViewById(R.id.productPriceTextView);
         Currency current = MainActivity.exchangeRates.get(0);
         double exchageRate = 1;
         String currency = "$";
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String currencyName = preferences.getString("currency","USD");
-        System.out.println(currencyName);
+
+
+
         for (Currency c :
                 MainActivity.exchangeRates) {
             if(c.getName().equals(currencyName)){
@@ -137,5 +148,6 @@ public class FactFragment extends Fragment {
 
         String price = new DecimalFormat("#.##").format((productPrice * exchageRate));
         productPriceTextView.setText(currency + price);
+        productPriceTextView.setTextSize(textSize + 8);
     }
 }
