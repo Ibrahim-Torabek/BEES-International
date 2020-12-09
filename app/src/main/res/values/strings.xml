@@ -28,6 +28,7 @@
     <string name="text_email_title">Email:</string>
     <string name="text_email_address">admin@beesinternational.ca</string>
     <string name="title_address">Address:</string>
+    <string name="title_socialMedia">Social Medias:</string>
     <string name="contact_address">277 Riverside Dr W, Windsor, ON N9A 5K4</string>
     <string name="text_ask_dealer">Ask Dealer</string>
     <!-- TODO: Remove or change this placeholder text -->

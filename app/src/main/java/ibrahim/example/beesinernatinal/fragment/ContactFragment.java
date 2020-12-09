@@ -1,10 +1,14 @@
 package ibrahim.example.beesinernatinal.fragment;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -12,6 +16,7 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -37,6 +42,8 @@ public class ContactFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    public static final int PREMISSION_CALL_PHONE = 0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -122,16 +129,37 @@ public class ContactFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            Uri call = Uri.parse("tel:" + callNumber);
-            i.setData(call);
-
-            if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                startActivity(i);
-            } else {
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot make a call", Snackbar.LENGTH_LONG);
+            if(ContextCompat.checkSelfPermission(getActivity(),
+                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Permission NOT Granted", Snackbar.LENGTH_LONG);
                 snackbar.show();
+
+                if(ActivityCompat.shouldShowRequestPermissionRationale(
+                        getActivity(),
+                        Manifest.permission.CALL_PHONE
+                )){
+
+                } else {
+                    ActivityCompat.requestPermissions(
+                            getActivity(),
+                            new String[] {Manifest.permission.CALL_PHONE},
+                            PREMISSION_CALL_PHONE
+                    );
+                }
+            } else {
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                Uri call = Uri.parse("tel:" + callNumber);
+                i.setData(call);
+
+                if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(i);
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot make a call", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
             }
+
         }
     }
 
@@ -163,6 +191,8 @@ public class ContactFragment extends Fragment {
                 Uri sms = Uri.parse("smsto:");
                 i.setData(sms);
                 i.putExtra("address", getResources().getString(R.string.text_sms_number));
+
+
 
                 if(i.resolveActivity(getActivity().getPackageManager()) != null){
                     startActivity(i);
@@ -227,5 +257,57 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        ImageView twitterImage = view.findViewById(R.id.twitterImage);
+        twitterImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                Uri twitter = Uri.parse("twitter://user?screen_name=Torabek403");
+                Uri twitterWeb = Uri.parse("https://twitter.com/Torabek403");
+                i.setData(twitter);
+
+                if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(i);
+                } else {
+                    Intent webIntent = new Intent(Intent.ACTION_VIEW);
+                    webIntent.setData(twitterWeb);
+
+                    if(webIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                        startActivity(webIntent);
+                    }else {
+
+                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "Cannot open twitter app", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+                }
+
+            }
+        });
+
+        ImageView facebookImage = view.findViewById(R.id.facebookImage);
+        facebookImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                Uri twitter = Uri.parse("fb://www.facebook.com/BEES-International-102895001694749");
+                Uri twitterWeb = Uri.parse("fb://page/102895001694749");
+                i.setData(twitter);
+
+                if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(i);
+                } else {
+                    Intent webIntent = new Intent(Intent.ACTION_VIEW);
+                    webIntent.setData(twitterWeb);
+
+                    if(webIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                        startActivity(webIntent);
+                    }else {
+                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "Cannot open twitter app", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+                }
+            }
+
+        });
     }
 }

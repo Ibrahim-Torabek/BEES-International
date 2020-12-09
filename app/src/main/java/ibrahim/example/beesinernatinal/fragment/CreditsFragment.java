@@ -85,43 +85,52 @@ public class CreditsFragment extends Fragment {
 
         TextView creditIconsText = view.findViewById(R.id.creditIconsText);
         creditIconsText.setTextSize(textSize);
-        creditIconsText.setOnClickListener(e -> {
-            Uri webpage = Uri.parse("https://www.flaticon.com/");
-            Intent i = new Intent(Intent.ACTION_VIEW,webpage);
+        creditIconsText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("https://www.flaticon.com/");
+                Intent i = new Intent(Intent.ACTION_VIEW,webpage);
 
-            if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                startActivity(i);
-            } else {
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
-                snackbar.show();
+                if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(i);
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
             }
         });
 
         TextView creditFlagsText = view.findViewById(R.id.creditFlagsText);
         creditFlagsText.setTextSize(textSize);
-        creditFlagsText.setOnClickListener(e -> {
-            Uri webpage = Uri.parse("https://www.flaticon.com/authors/freepik");
-            Intent i = new Intent(Intent.ACTION_VIEW,webpage);
+        creditFlagsText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("https://www.flaticon.com/authors/freepik");
+                Intent i = new Intent(Intent.ACTION_VIEW,webpage);
 
-            if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                startActivity(i);
-            } else {
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
-                snackbar.show();
+                if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(i);
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
             }
         });
 
         TextView creditImagesText = view.findViewById(R.id.creditImagesText);
         creditImagesText.setTextSize(textSize);
-        creditImagesText.setOnClickListener(e -> {
-            Uri webpage = Uri.parse("https://pixabay.com/");
-            Intent i = new Intent(Intent.ACTION_VIEW,webpage);
+        creditImagesText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("https://pixabay.com/");
+                Intent i = new Intent(Intent.ACTION_VIEW,webpage);
 
-            if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                startActivity(i);
-            } else {
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
-                snackbar.show();
+                if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(i);
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the browser", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
             }
         });
 
