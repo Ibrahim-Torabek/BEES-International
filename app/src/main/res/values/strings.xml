@@ -76,7 +76,7 @@
         <item>D-Grip Shovel</item>
         <item>Square Shovel</item>
         <!--        Painting Tools 1   -->
-        <item>Trim Guard</item>
+        <item>Tray</item>
         <item>Angle Brush</item>
         <item>Roller Cover</item>
         <!--        Power Tools 1   -->
@@ -198,24 +198,24 @@
     </string-array>
     <integer-array name="products_image">
         <!--        Hand Tools 1-->
-        <item>@drawable/pd_hammer</item>
-        <item>@drawable/pd_wrench</item>
+        <item>@drawable/ph_face_hammer</item>
+        <item>@drawable/ph_wrench</item>
         <item>@drawable/pd_adjust_wrench</item>
         <item>@drawable/pd_screw</item>
         <item>@drawable/pd_plier</item>
         <!--        Outdoor Tools 1   -->
         <item>@drawable/pd_digger</item>
         <item>@drawable/pd_dshovle</item>
-        <item>@drawable/pd_sshovel</item>
+        <item>@drawable/pd_sshovle</item>
         <!--        Painting Tools 1   -->
-        <item>@drawable/pd_trim</item>
+        <item>@drawable/pd_tray</item>
         <item>@drawable/pd_angle_brush</item>
-        <item>@drawable/pd_roller_cover</item>
+        <item>@drawable/ph_roller</item>
         <!--        Power Tools 1   -->
         <item>@drawable/pd_hammer_drill</item>
         <item>@drawable/pd_drill</item>
         <!--        Garden Tools 1   -->
-        <item>@drawable/pd_pruner</item>
+        <item>@drawable/pd_trim</item>
         <!--        Woodword Tools 1   -->
         <item>@drawable/pd_saw</item>
         <!--        Air Tools 1   -->
@@ -335,6 +335,13 @@
     <string name="settings_currency"> Currency of Country</string>
     <string name="settings_animation">Animation</string>
     <string name="setting_text_size">Text Size</string>
+    <string name="menu_credits">Credits</string>
+    <string name="credit_icons_title">Icons</string>
+    <string name="credit_flags_title">Flags</string>
+    <string name="credit_images_title">Images</string>
+    <string name="credit_icons_text">All Icons From <u>www.flaticon.com</u></string>
+    <string name="credit_flags_text">Flags made by <i>Freepik</i> from <u>www.flaticon.com</u></string>
+    <string name="credit_images_text">All Product Images from <u>www.pixabay.com</u></string>
     <string-array name="settings_text_size_keys">
         <item>Small</item>
         <item>Medium</item>

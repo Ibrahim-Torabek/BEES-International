@@ -53,4 +53,9 @@
         android:name="ibrahim.example.beesinernatinal.SettingsActivity"
         android:label="activity_settings"
         tools:layout="@layout/activity_settings" />
+    <fragment
+        android:id="@+id/nav_credits"
+        android:name="ibrahim.example.beesinernatinal.fragment.CreditsFragment"
+        android:label="@string/menu_credits"
+        tools:layout="@layout/fragment_credits" />
 </navigation>
