@@ -21,13 +21,14 @@
     <string name="text_accounting_title">Contact Accounting:</string>
     <string name="text_accounting_number">+1 519-999-1113</string>
 
-    <string name="text_sms_title">SMS:</string>
+    <string name="text_sms_title">WhatsApp:</string>
     <string name="text_sms_number">+1 519-999-2222</string>
     <string name="text_fax_title">Fax:</string>
     <string name="text_fax_number">519-999-3333</string>
     <string name="text_email_title">Email:</string>
     <string name="text_email_address">admin@beesinternational.ca</string>
     <string name="title_address">Address:</string>
+    <string name="title_socialMedia">Social Medias:</string>
     <string name="contact_address">277 Riverside Dr W, Windsor, ON N9A 5K4</string>
     <string name="text_ask_dealer">Ask Dealer</string>
     <!-- TODO: Remove or change this placeholder text -->
