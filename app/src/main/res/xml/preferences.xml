@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="true"
+        android:entries="@array/settings_text_size_keys"
+        android:entryValues="@array/settings_text_size_values"
+        android:icon="@drawable/ic_edit_text"
+        android:key="settings_text_size"
+        android:title="@string/setting_text_size" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:icon="@drawable/ic_acceleration"
+        android:key="animation"
+        android:title="@string/settings_animation" />
+    <ListPreference
+        android:defaultValue="true"
+        android:entries="@array/currency_country"
+        android:entryValues="@array/currency_name"
+        android:icon="@drawable/ic_foreign_currency_exchange"
+        android:key="currency"
+        android:title="@string/settings_currency" />
+</PreferenceScreen>

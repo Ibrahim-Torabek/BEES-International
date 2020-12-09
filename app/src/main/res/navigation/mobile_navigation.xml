@@ -42,4 +42,9 @@
         android:name="ibrahim.example.beesinernatinal.fragment.DealerFragment"
         android:label="Ask Dealer"
         tools:layout="@layout/fragment_dealer" />
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="ibrahim.example.beesinernatinal.SettingsActivity"
+        android:label="activity_settings"
+        tools:layout="@layout/activity_settings" />
 </navigation>

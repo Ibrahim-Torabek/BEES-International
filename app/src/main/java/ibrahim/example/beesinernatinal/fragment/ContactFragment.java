@@ -1,12 +1,14 @@
 package ibrahim.example.beesinernatinal.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,8 @@ public class ContactFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private View view;
 
     public ContactFragment() {
         // Required empty public constructor
@@ -84,82 +88,8 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_contact, container, false);
+        view = inflater.inflate(R.layout.fragment_contact, container, false);
 
-        // Call three different number with Intent
-        TextView callTextView = view.findViewById(R.id.callTextView);
-        callTextView.setOnClickListener(new PhoneCall(callTextView.getText().toString()));
-        TextView salesTextView = view.findViewById(R.id.salesTextView);
-        salesTextView.setOnClickListener(new PhoneCall(salesTextView.getText().toString()));
-        TextView accountingTextView = view.findViewById(R.id.accountingTextView);
-        accountingTextView.setOnClickListener(new PhoneCall(accountingTextView.getText().toString()));
-
-
-        // SMS to a phone number Intent
-        TextView smsTextView = view.findViewById(R.id.smsTextView);
-        smsTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                Uri sms = Uri.parse("smsto:");
-                i.setData(sms);
-                i.putExtra("address", getResources().getString(R.string.text_sms_number));
-
-                if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                    startActivity(i);
-                } else {
-                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot send an SMS", Snackbar.LENGTH_LONG);
-                    snackbar.show();
-                }
-            }
-        });
-
-        // Send Email Intent
-        TextView emailTextView = view.findViewById(R.id.emailTextView);
-        emailTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                Uri email = Uri.parse("mailto:");
-                String[] emailAddress = {getResources().getString(R.string.text_email_address)};
-
-                i.setData(email);
-                i.putExtra(Intent.EXTRA_EMAIL,emailAddress);
-
-
-                if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                    startActivity(i);
-                } else {
-                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot end an email", Snackbar.LENGTH_LONG);
-                    snackbar.show();
-                }
-            }
-        });
-
-        // Open address on map Intent
-        TextView addressTextView = view.findViewById(R.id.addressTextView);
-        addressTextView.setOnClickListener(v -> {
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            Uri location = Uri.parse("geo:0.0?q=42.3189817,-83.0435235(BEES International)");
-            i.setData(location);
-
-            if(i.resolveActivity(getActivity().getPackageManager()) != null){
-                startActivity(i);
-            } else {
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the map", Snackbar.LENGTH_LONG);
-                snackbar.show();
-            }
-        });
-
-        TextView dealerTextView = view.findViewById(R.id.dealerButton);
-        dealerTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Navigation.findNavController(view).navigate(R.id.action_nav_contact_to_dealerFragment);
-            }
-        });
 
         return view;
     }
@@ -205,5 +135,97 @@ public class ContactFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
 
+        // Call three different number with Intent
+        TextView callTextView = view.findViewById(R.id.callTextView);
+        callTextView.setTextSize(textSize);
+        callTextView.setOnClickListener(new PhoneCall(callTextView.getText().toString()));
+        TextView salesTextView = view.findViewById(R.id.salesTextView);
+        salesTextView.setTextSize(textSize);
+        salesTextView.setOnClickListener(new PhoneCall(salesTextView.getText().toString()));
+        TextView accountingTextView = view.findViewById(R.id.accountingTextView);
+        accountingTextView.setTextSize(textSize);
+        accountingTextView.setOnClickListener(new PhoneCall(accountingTextView.getText().toString()));
+
+
+        // SMS to a phone number Intent
+        TextView smsTextView = view.findViewById(R.id.smsTextView);
+        smsTextView.setTextSize(textSize);
+        smsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_SENDTO);
+                Uri sms = Uri.parse("smsto:");
+                i.setData(sms);
+                i.putExtra("address", getResources().getString(R.string.text_sms_number));
+
+                if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(i);
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot send an SMS", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            }
+        });
+
+        // Send Email Intent
+        TextView emailTextView = view.findViewById(R.id.emailTextView);
+        emailTextView.setTextSize(textSize);
+        emailTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(Intent.ACTION_SENDTO);
+                Uri email = Uri.parse("mailto:");
+                String[] emailAddress = {getResources().getString(R.string.text_email_address)};
+
+                i.setData(email);
+                i.putExtra(Intent.EXTRA_EMAIL,emailAddress);
+
+
+                if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(i);
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot end an email", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            }
+        });
+
+        // Fax textView
+        TextView faxTextView = view.findViewById(R.id.faxTextView);
+        faxTextView.setTextSize(textSize);
+
+        // Open address on map Intent
+        TextView addressTextView = view.findViewById(R.id.addressTextView);
+        addressTextView.setTextSize(textSize);
+        addressTextView.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            Uri location = Uri.parse("geo:0.0?q=42.3189817,-83.0435235(BEES International)");
+            i.setData(location);
+
+            if(i.resolveActivity(getActivity().getPackageManager()) != null){
+                startActivity(i);
+            } else {
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),"Cannot open the map", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+
+        TextView dealerTextView = view.findViewById(R.id.dealerButton);
+        dealerTextView.setTextSize(textSize);
+        dealerTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Navigation.findNavController(view).navigate(R.id.action_nav_contact_to_dealerFragment);
+            }
+        });
+
+    }
 }

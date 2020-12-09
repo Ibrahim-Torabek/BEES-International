@@ -1,6 +1,7 @@
 package ibrahim.example.beesinernatinal.fragment;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +44,8 @@ public class CategoryFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private View view;
 
     public CategoryFragment() {
         // Required empty public constructor
@@ -81,57 +85,16 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_category, container, false);
+        view = inflater.inflate(R.layout.fragment_category, container, false);
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
         MainActivity.fab.hide();
-
-        // Create Products List
-        // Data is just for test.
-
-//        if(categories.size() == 0){
-//            initProducts();
-//        }
-
-
-        // Create Category list from products list
-        //ArrayList<CategoryType> categories = new ArrayList<>();
-
-//        // Take all products' category from products list into categories ArrayList
-//        for (ProductType product :
-//                products) {
-//            categories.add(new CategoryType(product.getCategory(),1));  // This means at least one item exist at that category
-//        }
-//
-//        // Remove duplicated item in each category, and increase item count.
-//        for(int i=0; i < categories.size(); i++){
-//            for(int j=i+1; j < categories.size(); j++){
-//                if(categories.get(i).getName() == categories.get(j).getName()){
-//                    categories.get(i).setItems(categories.get(i).getItems() + 1);
-//                    categories.remove(j);
-//                    j--;
-//                }
-//            }
-//        }
-
-        // Create categories based on products
-//        for (ProductType product :products) {
-//            boolean flag=false;
-//            int indx=0;
-//
-//            for(;indx<categories.size();indx++) {
-//                if(categories.get(indx).getName().equals(product.getCategory())) {
-//                    flag=true;
-//                    break;  // If category exist in arraylist, break
-//                }
-//            }
-//            if (flag) {  // If category exist in ArrayList, increase the item count
-//                categories.get(indx).setItems(categories.get(indx).getItems()+1);
-//            }else {  // If not exit, add the category name to the ArrayList
-//                categories.add(new CategoryType(product.getCategory(),1));
-//            }
-//        }
-
-//        System.out.println(categories.size());
-//        System.out.println(categories.get(0).getItems());
 
         CustomListViewAdapter adapter = new CustomListViewAdapter(getContext(),categories);
 
@@ -147,7 +110,6 @@ public class CategoryFragment extends Fragment {
             Navigation.findNavController(view)
                     .navigate(R.id.action_nav_category_to_productFragment,args);
         });
-        return view;
     }
 
     public class CustomListViewAdapter extends ArrayAdapter<CategoryType>{
@@ -166,16 +128,24 @@ public class CategoryFragment extends Fragment {
                 ImageView iconImage = convertView.findViewById(R.id.iconImageView);
                 iconImage.setImageResource(getItem(position).getIconResource());
 
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
+                //System.out.println(textSize);
+
                 TextView categoryList = convertView.findViewById(R.id.categoryListTextView);
                 categoryList.setText(getItem(position).getName());
-                System.out.println(getItem(position).getName());
+                categoryList.setTextSize(textSize);
+
 
                 TextView categoryCount = convertView.findViewById(R.id.categoryCountTextView);
                 categoryCount.setText(String.valueOf(getItem(position).getItems()));
+                categoryCount.setTextSize(textSize);
             }
 
             return convertView;
         }
+
+
     }
 
     private void initProducts(){

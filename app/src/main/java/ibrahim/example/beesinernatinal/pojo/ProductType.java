@@ -1,6 +1,8 @@
 package ibrahim.example.beesinernatinal.pojo;
 
-public class ProductType {
+import java.io.Serializable;
+
+public class ProductType implements Serializable {
 
     private String name;
     private String description;

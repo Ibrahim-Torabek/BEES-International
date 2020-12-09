@@ -332,5 +332,18 @@
     <string name="about_employee_text">1</string>
     <string name="flag">flag</string>
     <string name="send_email">Send Email</string>
+    <string name="settings_currency"> Currency of Country</string>
+    <string name="settings_animation">Animation</string>
+    <string name="setting_text_size">Text Size</string>
+    <string-array name="settings_text_size_keys">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+    <string-array name="settings_text_size_values">
+        <item>18</item>
+        <item>22</item>
+        <item>26</item>
+    </string-array>
 
 </resources>

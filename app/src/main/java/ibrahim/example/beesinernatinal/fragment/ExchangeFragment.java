@@ -1,12 +1,14 @@
 package ibrahim.example.beesinernatinal.fragment;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -34,6 +36,8 @@ public class ExchangeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private View view;
 
     public ExchangeFragment() {
         // Required empty public constructor
@@ -70,8 +74,17 @@ public class ExchangeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_exchange, container, false);
+        view = inflater.inflate(R.layout.fragment_exchange, container, false);
         MainActivity.fab.hide();
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
 
         RecyclerView exchangeRecycleView = view.findViewById(R.id.exchangeRecycleView);
 
@@ -84,7 +97,7 @@ public class ExchangeFragment extends Fragment {
         double usd;
 
         usd = Double.parseDouble((String) usdText.getText().toString());
-        exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, usd));
+        exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, usd,textSize));
 
         // Change the exchage rate of currncies when usd Text changed
         usdText.addTextChangedListener(new TextWatcher() {
@@ -98,7 +111,7 @@ public class ExchangeFragment extends Fragment {
                 String usdString = usdText.getText().toString();
                 if(!usdString.isEmpty()) {
                     Double myusd = Double.parseDouble(usdString);
-                    exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, myusd));
+                    exchangeRecycleView.setAdapter(new ExchangeRecyclerViewAdapter(MainActivity.exchangeRates, myusd,textSize));
                 }
 
             }
@@ -120,7 +133,5 @@ public class ExchangeFragment extends Fragment {
             }
         });
 
-        return view;
     }
-
 }

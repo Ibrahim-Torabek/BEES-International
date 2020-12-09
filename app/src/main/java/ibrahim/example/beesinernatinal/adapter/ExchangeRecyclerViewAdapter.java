@@ -1,5 +1,7 @@
 package ibrahim.example.beesinernatinal.adapter;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +20,13 @@ public class ExchangeRecyclerViewAdapter extends RecyclerView.Adapter<ExchangeRe
 
     private ArrayList<Currency> exchangeRates;
     private double usd;
+    private int textSize;
 
-    public ExchangeRecyclerViewAdapter(ArrayList<Currency> rates, double usd) {
+    public ExchangeRecyclerViewAdapter(ArrayList<Currency> rates, double usd, int textSize) {
 
         this.exchangeRates = rates;
         this.usd = usd;
-
+        this.textSize = textSize + 8;
     }
 
 
@@ -32,28 +35,36 @@ public class ExchangeRecyclerViewAdapter extends RecyclerView.Adapter<ExchangeRe
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_exchange, parent,false);
-//        CustomViewHolder viewHolder = new CustomViewHolder(view);
-        //LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        //view.setLayoutParams(params);
-        //CustomViewHolder viewHolder = new CustomViewHolder(view);
+
 
         return new CustomViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+
         Currency exchangeRate = exchangeRates.get(position);
 
         holder.countryName.setText(exchangeRate.getCountry());
+        holder.countryName.setTextSize(textSize - 8);
 
         // Just list countries name if usd = -1
         if (usd != -1) {
             holder.currencyName.setText(exchangeRate.getName());
+            holder.currencyName.setTextSize(textSize);
+
             double rate = Math.round(usd * exchangeRate.getRate() *100 ) / 100;
             holder.exchangeRate.setText(exchangeRate.getSign() + String.valueOf(rate));
-            holder.countryFlag.setImageResource(exchangeRate.getFlag());
-        }
+            holder.exchangeRate.setTextSize(textSize);
 
+            holder.countryFlag.setImageResource(exchangeRate.getFlag());
+            ViewGroup.LayoutParams layoutParams = holder.countryFlag.getLayoutParams();
+            layoutParams.width = textSize * 3;
+            layoutParams.height = textSize * 3;
+            holder.countryFlag.setLayoutParams(layoutParams);
+
+
+        }
 
     }
 
@@ -66,6 +77,8 @@ public class ExchangeRecyclerViewAdapter extends RecyclerView.Adapter<ExchangeRe
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder{
+
+
         protected TextView countryName;
         protected TextView currencyName;
         protected TextView exchangeRate;
