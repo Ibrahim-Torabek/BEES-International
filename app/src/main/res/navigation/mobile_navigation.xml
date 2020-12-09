@@ -11,7 +11,11 @@
         tools:layout="@layout/fragment_category" >
         <action
             android:id="@+id/action_nav_category_to_productFragment"
-            app:destination="@id/productFragment" />
+            app:destination="@id/productFragment"
+            app:enterAnim="@anim/in"
+            app:exitAnim="@anim/out"
+            app:popEnterAnim="@anim/back_in"
+            app:popExitAnim="@anim/back_out" />
     </fragment>
     <fragment
         android:id="@+id/nav_exchange"
@@ -30,7 +34,9 @@
         tools:layout="@layout/fragment_contact" >
         <action
             android:id="@+id/action_nav_contact_to_dealerFragment"
-            app:destination="@id/dealerFragment" />
+            app:destination="@id/dealerFragment"
+            app:enterAnim="@anim/ask_dealer_in"
+            app:popExitAnim="@anim/ask_dealer_out" />
     </fragment>
     <fragment
         android:id="@+id/productFragment"

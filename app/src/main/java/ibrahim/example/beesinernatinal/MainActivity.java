@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this, SettingsActivity.class
                 );
 
+
                 startActivity(i);
                 break;
         }
