@@ -40,12 +40,15 @@ import ibrahim.example.beesinernatinal.pojo.Currency;
  * @author  Wusiman Yibulayin (Ibrahim)
  * @version 1.0
  * @since   2020-11-20
+ *
  */
 public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
+
+    // To switch on or off in different fragments.
     public static FloatingActionButton fab;
 
-    // What to use in Exchange, Product and AboutUs fragments
+    // Want to use in Exchange, Product, Contact and AboutUs fragments
     public static ArrayList<Currency> exchangeRates;
 
     @Override
@@ -107,7 +110,17 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    /**
+     * Initialize Currency object into an arrayList. </br>
+     * All attributes of the currency informations stored in String.xml file. This function will
+     * get all attributes from string file as array and assign them into the created Currency
+     * object ArrayList.
+     *
+     * @return Arraylist<Currency>
+     */
     private ArrayList<Currency> initExchange(){
+
+        // Get all attributes from string.xml
         String[] currency_name = getResources().getStringArray(R.array.currency_name);
         String[] currency_country = getResources().getStringArray(R.array.currency_country);
         String[] currency_rate = getResources().getStringArray(R.array.currency_rate);
@@ -116,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Currency> currencies = new ArrayList<>();
 
+        // Assign all arrays to Currency ArayList.
         for (int i = 1; i < currency_country.length; i++){
             currencies.add(new Currency(
                             currency_name[i],
@@ -130,9 +144,15 @@ public class MainActivity extends AppCompatActivity {
         return currencies;
     }
 
+    /**
+     * OnClick extended class from OnClickListener to send an sms to a number from string.xml
+     *
+     * @see View.OnClickListener
+     */
     private class smsOnClick implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+
             Intent i = new Intent(Intent.ACTION_SENDTO);
             Uri sms = Uri.parse("smsto:");
             i.setData(sms);

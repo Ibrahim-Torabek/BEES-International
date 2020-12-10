@@ -8,6 +8,20 @@ import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 
+
+/**
+ * <h1>App for BEES International</h1>
+ * <h2>Android Project of MAD305 Course</h2>
+ * <p>This class is settings activity that extends AppCompactActivity.</p>
+ * <p>
+ *
+ * @author  Wusiman Yibulayin (Ibrahim)
+ * @version 1.0
+ * @since   2020-11-20
+ *
+ * @see AppCompatActivity
+ *
+ */
 public class SettingsActivity extends AppCompatActivity {
     public static int textSize = 20;
 

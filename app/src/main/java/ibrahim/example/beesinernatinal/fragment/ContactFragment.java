@@ -35,7 +35,6 @@ import ibrahim.example.beesinernatinal.R;
  * @author Wusiman Yibuulayin
  * @version 1.0
  * @since 2020-11-20
-
  */
 public class ContactFragment extends Fragment {
 
@@ -50,6 +49,7 @@ public class ContactFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    // I need to use the view in other overrided method of this fragment.
     private View view;
 
     public ContactFragment() {
@@ -164,9 +164,14 @@ public class ContactFragment extends Fragment {
         }
     }
 
+    /**
+     * Override onResume method to effect the settings of text size.
+     */
     @Override
     public void onResume() {
         super.onResume();
+
+        // Get settings values of text size and animation.
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
         boolean isAnimated = preferences.getBoolean("animation",true);
@@ -183,15 +188,15 @@ public class ContactFragment extends Fragment {
         accountingTextView.setOnClickListener(new PhoneCall(accountingTextView.getText().toString()));
 
 
-        // SMS to a phone number Intent
-        TextView smsTextView = view.findViewById(R.id.smsTextView);
-        smsTextView.setTextSize(textSize);
-        smsTextView.setOnClickListener(new View.OnClickListener() {
+        // Send a whatsapp message to a phone number Intent
+        TextView whatsapp = view.findViewById(R.id.smsTextView);
+        whatsapp.setTextSize(textSize);
+        whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "I would like to ask you about the products that you are providing");
                 sendIntent.setType("text/plain");
                 //sendIntent.setData(sms);
                 sendIntent.setPackage("com.whatsapp");
@@ -259,6 +264,7 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        // Open twitter
         ImageView twitterImage = view.findViewById(R.id.twitterImage);
         twitterImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -268,9 +274,11 @@ public class ContactFragment extends Fragment {
                 Uri twitterWeb = Uri.parse("https://twitter.com/Torabek403");
                 i.setData(twitter);
 
+                // Open twitter app if the user installed on their phone
                 if(i.resolveActivity(getActivity().getPackageManager()) != null){
                     startActivity(i);
                 } else {
+                    // Open twitter website if the user NOT installed the App
                     Intent webIntent = new Intent(Intent.ACTION_VIEW);
                     webIntent.setData(twitterWeb);
 
@@ -286,6 +294,7 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        // Open facebook
         ImageView facebookImage = view.findViewById(R.id.facebookImage);
         facebookImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -295,9 +304,11 @@ public class ContactFragment extends Fragment {
                 Uri twitterWeb = Uri.parse("fb://page/102895001694749");
                 i.setData(twitter);
 
+                // Open facebook app if the user installed on their phone
                 if(i.resolveActivity(getActivity().getPackageManager()) != null){
                     startActivity(i);
                 } else {
+                    // Open facebook website if the user NOT installed the App
                     Intent webIntent = new Intent(Intent.ACTION_VIEW);
                     webIntent.setData(twitterWeb);
 

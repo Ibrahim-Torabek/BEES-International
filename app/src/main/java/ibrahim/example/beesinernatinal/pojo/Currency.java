@@ -1,5 +1,15 @@
 package ibrahim.example.beesinernatinal.pojo;
 
+
+/**
+ * <h1>App for BEES International</h1>
+ * <h2>Android Project of MAD305 Course</h2>
+ * This class is Currency class
+ *
+ * @author Wusiman Yibuulayin
+ * @version 1.0
+ * @since 2020-11-20
+ */
 public class Currency {
     private String name;
     private String country;

@@ -23,9 +23,19 @@ import ibrahim.example.beesinernatinal.MainActivity;
 import ibrahim.example.beesinernatinal.R;
 
 /**
+ * <h1>App for BEES International</h1>
+ * <h2>Android Project of MAD305 Course</h2>
+ * <p>This is a fragment class to manage AboutFragment.</p>
+ *
  * A simple {@link Fragment} subclass.
  * Use the {@link AboutFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ * @author  Wusiman Yibulayin (Ibrahim)
+ * @version 1.0
+ * @since   2020-11-20
+ *
+ * @see Fragment
  */
 public class AboutFragment extends Fragment {
 
@@ -38,6 +48,7 @@ public class AboutFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    // I need to use the view in other overrided method of this fragment.
     private View view;
 
     public AboutFragment() {
@@ -69,9 +80,9 @@ public class AboutFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        // Hide the fab button in about fragment.
         MainActivity.fab.hide();
-
-
 
     }
 
@@ -81,14 +92,16 @@ public class AboutFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_about, container, false);
 
-
-
         return view;
     }
 
+    /**
+     * Override onResume method to effect the settings of text size.
+     */
     @Override
     public void onResume() {
         super.onResume();
+        // Get text size from settings (preferences)
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
 
