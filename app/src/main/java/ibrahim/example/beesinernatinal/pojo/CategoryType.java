@@ -2,7 +2,15 @@ package ibrahim.example.beesinernatinal.pojo;
 
 import java.util.ArrayList;
 
-
+/**
+ * <h1>App for BEES International</h1>
+ * <h2>Android Project of MAD305 Course</h2>
+ * This class is Category class
+ *
+ * @author Wusiman Yibuulayin
+ * @version 1.0
+ * @since 2020-11-20
+ */
 public class CategoryType {
     private String name;
     private int items;

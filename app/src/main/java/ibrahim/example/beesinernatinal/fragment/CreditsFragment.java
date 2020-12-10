@@ -21,6 +21,12 @@ import ibrahim.example.beesinernatinal.R;
  * A simple {@link Fragment} subclass.
  * Use the {@link CreditsFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ * Display images and icons credits, and give the links.
+ *
+ * @author Wusiman Yibuulayin
+ * @version 1.0
+ * @since 2020-11-20
  */
 public class CreditsFragment extends Fragment {
 
@@ -33,6 +39,7 @@ public class CreditsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    // I need to use the view in other overrided method of this fragment.
     private View view;
 
     public CreditsFragment() {
@@ -77,6 +84,9 @@ public class CreditsFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Override onResume method to effect the settings of text size.
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -88,6 +98,7 @@ public class CreditsFragment extends Fragment {
         creditIconsText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Open the web
                 Uri webpage = Uri.parse("https://www.flaticon.com/");
                 Intent i = new Intent(Intent.ACTION_VIEW,webpage);
 
@@ -105,6 +116,8 @@ public class CreditsFragment extends Fragment {
         creditFlagsText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Open the web
+
                 Uri webpage = Uri.parse("https://www.flaticon.com/authors/freepik");
                 Intent i = new Intent(Intent.ACTION_VIEW,webpage);
 
@@ -122,6 +135,8 @@ public class CreditsFragment extends Fragment {
         creditImagesText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Open the web
+
                 Uri webpage = Uri.parse("https://pixabay.com/");
                 Intent i = new Intent(Intent.ACTION_VIEW,webpage);
 

@@ -25,6 +25,9 @@ import ibrahim.example.beesinernatinal.R;
  * A simple {@link Fragment} subclass.
  * Use the {@link ExchangeFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * @author Wusiman Yibuulayin
+ * @version 1.0
+ * @since 2020-11-20
  */
 public class ExchangeFragment extends Fragment {
 
@@ -37,6 +40,7 @@ public class ExchangeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    // I need to use the view in other overrided method of this fragment.
     private View view;
 
     public ExchangeFragment() {
@@ -80,6 +84,9 @@ public class ExchangeFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Override onResume method to effect the settings of text size.
+     */
     @Override
     public void onResume() {
         super.onResume();

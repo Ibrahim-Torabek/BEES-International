@@ -32,6 +32,10 @@ import ibrahim.example.beesinernatinal.R;
  * A simple {@link Fragment} subclass.
  * Use the {@link CategoryFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ * @author  Wusiman Yibulayin (Ibrahim)
+ * @version 1.0
+ * @since   2020-11-20
  */
 public class CategoryFragment extends Fragment {
 
@@ -47,6 +51,7 @@ public class CategoryFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    // I need to use the view in other overrided method of this fragment.
     private View view;
 
     public CategoryFragment() {
@@ -88,16 +93,18 @@ public class CategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_category, container, false);
-
+        MainActivity.fab.hide();
         return view;
     }
 
+    /**
+     * Override onResume method to effect the settings of text size.
+     */
     @Override
     public void onResume() {
         super.onResume();
 
-        MainActivity.fab.hide();
-
+        // List Categories in the ListView
         CustomListViewAdapter adapter = new CustomListViewAdapter(getContext(),categories);
 
         ListView categoryList = view.findViewById(R.id.categoryListView);
@@ -106,13 +113,17 @@ public class CategoryFragment extends Fragment {
         categoryList.setOnItemClickListener((parent, view1, position, id) -> {
 
             ArrayList<ProductType> products = categories.get(position).getProducts();
+
+            // Get animation settings from preferences
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             boolean isAnimated = preferences.getBoolean("animation",true);
 
             Bundle args = new Bundle();
             args.putSerializable("PRODUCTS",products);
 
+            // Set navigation options builder to set animation of the navigation controller
             NavOptions.Builder navBuilder = new NavOptions.Builder();
+            // Set navigation to the navigation controller if animation settings turned on.
             if(isAnimated){
                 navBuilder.setEnterAnim(R.anim.in);
                 navBuilder.setExitAnim(R.anim.out);
@@ -139,18 +150,21 @@ public class CategoryFragment extends Fragment {
                 convertView = LayoutInflater.from(getContext())
                         .inflate(R.layout.list_category, parent,false);
 
+                // Set the category's icon.
                 ImageView iconImage = convertView.findViewById(R.id.iconImageView);
                 iconImage.setImageResource(getItem(position).getIconResource());
 
+                // Get text size
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
                 int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
                 //System.out.println(textSize);
 
+                // Set category's name
                 TextView categoryList = convertView.findViewById(R.id.categoryListTextView);
                 categoryList.setText(getItem(position).getName());
                 categoryList.setTextSize(textSize);
 
-
+                // Set product amount of the category.
                 TextView categoryCount = convertView.findViewById(R.id.categoryCountTextView);
                 categoryCount.setText(String.valueOf(getItem(position).getItems()));
                 categoryCount.setTextSize(textSize);
@@ -162,25 +176,39 @@ public class CategoryFragment extends Fragment {
 
     }
 
+    /**
+     * Initialize Product list objects into their related category.
+     * Initialize Category list objects into an arrayList. </br>
+     * All attributes of the categories' and products' information stored in String.xml file.
+     * This function will get all attributes from string file as array and assign them into the created category
+     * object ArrayList.
+     *
+     * @return Arraylist<Currency>
+     */
     private void initProducts(){
-        //String[] categoryName = new String[getResources().getStringArray(R.array.categories).length];
+        // Get all categories and their icons.
         String[] categoryNames = getResources().getStringArray(R.array.categories_name);
         TypedArray categoryIcons = getResources().obtainTypedArray(R.array.categories_icon);
 
+        // create a category list array.
         if(categoryNames.length == categoryIcons.length()) {
             for(int i =0 ; i < categoryNames.length; i++){
                 categories.add(new CategoryType(categoryNames[i], categoryIcons.getResourceId(i,-1)));
             }
         }
 
+        // Get all products' name, description, image, price.
         String[] productNames = getResources().getStringArray(R.array.products_name);
         String[] productDescription = getResources().getStringArray(R.array.products_description);
         TypedArray productImage = getResources().obtainTypedArray((R.array.products_image));
         String[] productPrice = getResources().getStringArray(R.array.products_pricee);
+
+        // categories_item list is a list to determine how much items that the categories have.
+        // This array is listed each category has how much items.
         int[] categoriesItem = getResources().getIntArray(R.array.categories_item);
         int productCount = 0;
 
-
+        // Put products into their category by categories_item array.
         for(int i =0; i < categories.size(); i++){
             for(int j = 0; j < categoriesItem[i]; j++){
                 categories.get(i).setProduct(
@@ -193,21 +221,6 @@ public class CategoryFragment extends Fragment {
                 productCount++;
             }
         }
-//        for (CategoryType category :
-//                categories) {
-//            Random r = new Random();
-//            for (int i = 0; i < r.nextInt(10) + 3; i++) {
-//                ProductType productType = new ProductType("Drill", "Good",10);
-//                //category.setProduct(productType);
-//                if(category != null && productType != null) {
-//                    category.setProduct(productType);
-//                }
-//                //category.setProduct(new ProductType("Drill", "Good", 0));
-//            }
-//            //category.setIconResource(R.drawable.ic_gardentools);
-//            //category.setProduct(new ProductType("Drill", "Good",10));
-//        }
-
 
     }
 }

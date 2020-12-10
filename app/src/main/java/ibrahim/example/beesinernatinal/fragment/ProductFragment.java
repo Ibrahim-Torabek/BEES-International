@@ -25,6 +25,9 @@ import ibrahim.example.beesinernatinal.R;
  * A simple {@link Fragment} subclass.
  * Use the {@link ProductFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * @author Wusiman Yibuulayin
+ * @version 1.0
+ * @since 2020-11-20
  */
 public class ProductFragment extends Fragment {
 
@@ -84,6 +87,9 @@ public class ProductFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Override onResume method to effect the settings of text size.
+     */
     @Override
     public void onResume() {
         super.onResume();
