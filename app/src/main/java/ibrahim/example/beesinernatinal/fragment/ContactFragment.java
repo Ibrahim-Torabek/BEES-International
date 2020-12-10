@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 import android.preference.PreferenceManager;
@@ -168,6 +169,7 @@ public class ContactFragment extends Fragment {
         super.onResume();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         int textSize = Integer.parseInt(preferences.getString("settings_text_size", "20"));
+        boolean isAnimated = preferences.getBoolean("animation",true);
 
         // Call three different number with Intent
         TextView callTextView = view.findViewById(R.id.callTextView);
@@ -247,7 +249,12 @@ public class ContactFragment extends Fragment {
         dealerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NavOptions.Builder navBuilder = new NavOptions.Builder();
+                if(isAnimated){
+                    navBuilder.setEnterAnim(R.anim.ask_dealer_in);
 
+                    navBuilder.setPopExitAnim(R.anim.ask_dealer_out);
+                }
                 Navigation.findNavController(view).navigate(R.id.action_nav_contact_to_dealerFragment);
             }
         });

@@ -104,14 +104,25 @@ public class CategoryFragment extends Fragment {
         categoryList.setAdapter(adapter);
 
         categoryList.setOnItemClickListener((parent, view1, position, id) -> {
+
             ArrayList<ProductType> products = categories.get(position).getProducts();
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+            boolean isAnimated = preferences.getBoolean("animation",true);
 
             Bundle args = new Bundle();
             args.putSerializable("PRODUCTS",products);
 
+            NavOptions.Builder navBuilder = new NavOptions.Builder();
+            if(isAnimated){
+                navBuilder.setEnterAnim(R.anim.in);
+                navBuilder.setExitAnim(R.anim.out);
+                navBuilder.setPopEnterAnim(R.anim.back_in);
+                navBuilder.setPopExitAnim(R.anim.back_out);
+            }
+
             NavController navController = Navigation.findNavController(view);
 
-            navController.navigate(R.id.action_nav_category_to_productFragment, args);
+            navController.navigate(R.id.action_nav_category_to_productFragment, args,navBuilder.build());
         });
     }
 
