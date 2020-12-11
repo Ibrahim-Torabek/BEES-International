@@ -61,6 +61,10 @@ is at least Android 4.4 (Kit Kat).
 ### Image of Contact Us Fragment
 ![ContactUs](screenshots/contact.png)
 
+### Image of Contact Us Tablet Fragment
+![ContactUs](screenshots/contacus_tablet.png)
+
+
 ### Image of Settings Fragment
 ![Settings](screenshots/settings.png)
 
