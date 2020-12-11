@@ -20,7 +20,7 @@ this app will use some intents to open Phone caller, Email and
 Map apps. This is just an information app; the customer cannot 
 buy or order any product of this company. The only way to order is by 
 connecting with email.
-![Usage](screenshots/category.gif)
+![Usage](screenshots/category.gif | width = 100)
 
 
 ## Picture of Category Fragment
