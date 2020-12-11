@@ -43,6 +43,7 @@ public class CategoryFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PRODCUTS = "PRODUCTS";
 
     //ArrayList<ProductType> products = new ArrayList<>();
     ArrayList<CategoryType> categories = new ArrayList<>();
@@ -119,7 +120,7 @@ public class CategoryFragment extends Fragment {
             boolean isAnimated = preferences.getBoolean("animation",true);
 
             Bundle args = new Bundle();
-            args.putSerializable("PRODUCTS",products);
+            args.putSerializable(ARG_PRODCUTS,products);
 
             // Set navigation options builder to set animation of the navigation controller
             NavOptions.Builder navBuilder = new NavOptions.Builder();
