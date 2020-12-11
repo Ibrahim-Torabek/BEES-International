@@ -76,5 +76,28 @@
             android:layout_marginBottom="@dimen/credit_devider_margin"
             android:background="?android:attr/listDivider" />
 
+
+        <TextView
+            android:id="@+id/creditTransformTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_transform_title"
+            android:textColor="@color/colorTitle"
+            android:textSize="@dimen/list_size" />
+
+        <TextView
+            android:id="@+id/creditTransformText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_transform_text"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/text_size" />
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/credit_devider_margin"
+            android:background="?android:attr/listDivider" />
+
     </LinearLayout>
 </ScrollView>

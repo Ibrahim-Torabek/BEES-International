@@ -343,6 +343,11 @@
     <string name="credit_icons_text">All Icons From <u>www.flaticon.com</u></string>
     <string name="credit_flags_text">Flags made by <i>Freepik</i> from <u>www.flaticon.com</u></string>
     <string name="credit_images_text">All Product Images from <u>www.pixabay.com</u></string>
+    <string name="credit_transform_title">ViewPager Transform</string>
+    <string name="credit_transform_text">
+        Ian Thomas, \nI (2019) ViewPagerTransforms (2.0)\n
+        SourceCode: <u>github.com/ToxicBakery/ViewPagerTransforms</u>
+    </string>
     <string-array name="settings_text_size_keys">
         <item>Small</item>
         <item>Medium</item>
