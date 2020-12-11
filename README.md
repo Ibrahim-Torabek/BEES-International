@@ -1,7 +1,9 @@
 # BEES-International
 
+## Contributor:
+#### Name: Prof. Cai Filiault
+
 ## Author:
-#### Contributor: Prof. Cai Filiault
 #### Name: Ibrahim (Wusiman Yibulayin)
 #### Student ID: 0728356
 
@@ -71,6 +73,6 @@ is at least Android 4.4 (Kit Kat).
 
 ## Acknowledgments
 I want to especially thank my teacher Prof. Cai Filiault.
-He taught me how to use AndroidStudio to complete application
+He taught me how to use Android Studio to complete application
 development. I learned a lot of design and programming
 skills in this project.
