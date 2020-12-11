@@ -35,6 +35,7 @@ public class ProductFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PRODCUTS = "PRODUCTS";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -93,7 +94,7 @@ public class ProductFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        products = (ArrayList<ProductType>) getArguments().getSerializable("PRODUCTS");
+        products = (ArrayList<ProductType>) getArguments().getSerializable(ARG_PRODCUTS);
 
         MyViewPagerAdapter adapter = new MyViewPagerAdapter(getChildFragmentManager());
         ViewPager viewPager = view.findViewById(R.id.productContent);

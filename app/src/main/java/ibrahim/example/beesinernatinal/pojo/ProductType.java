@@ -14,6 +14,7 @@ import java.io.Serializable;
  */
 public class ProductType implements Serializable {
 
+
     private String name;
     private String description;
     private int imageSource;
